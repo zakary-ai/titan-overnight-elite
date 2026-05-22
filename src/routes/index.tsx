@@ -197,9 +197,9 @@ function StatBand() {
   }, []);
   return (
     <section ref={ref} className="relative border-y border-border bg-black overflow-hidden">
-      <div className="glow-orb w-[700px] h-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 7s ease-in-out infinite" }} />
-      <div className="glow-orb-soft w-[500px] h-[500px] -left-32 -top-32" />
-      <div className="glow-orb-soft w-[500px] h-[500px] -right-32 -bottom-32" />
+      <div className="glow-orb -z-10 w-[700px] h-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 7s ease-in-out infinite" }} />
+      <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -left-32 -top-32" />
+      <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-32 -bottom-32" />
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-border">
           <StatItem value={365} label="Nights / Year" trigger={trig} />
@@ -221,8 +221,8 @@ const WHO_CARDS = [
 function WhoWeAre() {
   return (
     <section id="who" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="grid-overlay" />
-      <div className="glow-orb-soft w-[600px] h-[600px] -right-40 top-20" />
+      <div className="grid-overlay -z-10" />
+      <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -right-40 top-20" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           <div className="lg:col-span-5 reveal">
@@ -271,8 +271,8 @@ const SERVICES = [
 function Services() {
   return (
     <section id="services" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
-      <div className="glow-orb-soft w-[700px] h-[700px] -left-60 top-1/3" />
-      <div className="glow-orb-soft w-[500px] h-[500px] -right-40 bottom-0" />
+      <div className="glow-orb-soft -z-10 w-[700px] h-[700px] -left-60 top-1/3" />
+      <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-40 bottom-0" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="reveal max-w-4xl">
           <div className="flex items-center gap-4 mb-8">
@@ -362,8 +362,8 @@ const SYSTEM_BENEFITS = [
 function TitanSystem() {
   return (
     <section id="system" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="grid-overlay" />
-      <div className="glow-orb w-[500px] h-[500px] left-1/2 -translate-x-1/2 top-10" style={{ animation: "goldPulse 9s ease-in-out infinite" }} />
+      <div className="grid-overlay -z-10" />
+      <div className="glow-orb -z-10 w-[500px] h-[500px] left-1/2 -translate-x-1/2 top-10" style={{ animation: "goldPulse 9s ease-in-out infinite" }} />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-6 reveal">
@@ -405,7 +405,7 @@ function TitanSystem() {
 function Leadership() {
   return (
     <section id="leadership" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
-      <div className="glow-orb-soft w-[650px] h-[650px] -right-48 -top-32" />
+      <div className="glow-orb-soft -z-10 w-[650px] h-[650px] -right-48 -top-32" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="reveal mb-16">
           <div className="flex items-center gap-4 mb-8">
@@ -483,8 +483,8 @@ function Leadership() {
 function Partners() {
   return (
     <section id="partners" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="grid-overlay" />
-      <div className="glow-orb-soft w-[600px] h-[600px] -left-40 bottom-10" />
+      <div className="grid-overlay -z-10" />
+      <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-10" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="reveal max-w-3xl">
           <div className="flex items-center gap-4 mb-8">
@@ -547,8 +547,8 @@ function Partners() {
 function FinalCTA() {
   return (
     <section id="contact" className="relative py-24 lg:py-32 border-t border-border overflow-hidden bg-black">
-      <div className="glow-orb w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 8s ease-in-out infinite" }} />
-      <div className="grid-overlay" />
+      <div className="glow-orb -z-10 w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 8s ease-in-out infinite" }} />
+      <div className="grid-overlay -z-10" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
       <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 text-center">
         <div className="reveal flex items-center justify-center gap-4 mb-8">
