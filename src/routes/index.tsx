@@ -519,6 +519,9 @@ function Partners() {
           </div>
         </div>
 
+        <blockquote className="reveal mt-16 max-w-4xl mx-auto text-center">
+          <p className="font-serif italic text-2xl md:text-3xl leading-snug text-foreground/90">
+            "Our partners walk in every morning and overnight operations are not something they have to think about.
             That is exactly what we set out to deliver, and it is what we deliver every single night."
           </p>
           <footer className="mt-6 text-[0.65rem] tracking-elite text-gold">
