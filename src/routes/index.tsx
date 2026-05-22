@@ -135,23 +135,40 @@ function Hero() {
           <a href="#system" className="btn-ghost-gold">View The Titan System</a>
         </div>
 
-        <div className="mt-14 overflow-hidden relative" style={{ maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)" }}>
-          <div className="marquee-track text-[0.7rem] tracking-wide-2 uppercase text-muted-foreground">
-            {[...Array(2)].map((_, dup) => (
-              <div key={dup} className="flex items-center shrink-0">
-                {["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"].map((t) => (
-                  <span key={`${dup}-${t}`} className="flex items-center gap-3 pr-10">
-                    <span className="w-1 h-1 bg-gold rounded-full" /> {t}
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
 }
+
+function CertMarquee() {
+  const items = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"];
+  return (
+    <section className="relative bg-black border-t border-b-0 border-gold/60">
+      <div
+        className="overflow-hidden relative py-5"
+        style={{
+          maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+          WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+        }}
+      >
+        <div className="marquee-track text-[0.7rem] tracking-wide-2 uppercase text-muted-foreground">
+          {[...Array(2)].map((_, dup) => (
+            <div key={dup} className="flex items-center shrink-0">
+              {items.map((t) => (
+                <span key={`${dup}-${t}`} className="flex items-center gap-3 pr-10">
+                  <span className="w-1 h-1 bg-gold rounded-full" /> {t}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="h-px bg-gold/60" />
+    </section>
+  );
+}
+
+
 
 function StatItem({ value, suffix, label, trigger }: { value: number; suffix?: string; label: string; trigger: boolean }) {
   const n = useCountUp(value, trigger);
@@ -554,6 +571,7 @@ function Index() {
       <Nav />
       <main>
         <Hero />
+        <CertMarquee />
         <StatBand />
         <WhoWeAre />
         <Services />
