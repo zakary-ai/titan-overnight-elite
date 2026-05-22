@@ -86,7 +86,7 @@ function Logo({ className = "" }: { className?: string }) {
 
 function Nav() {
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-black border-b border-border">
+    <header className="fixed top-0 inset-x-0 z-50 bg-black border-b border-gold/60 shadow-[0_1px_0_0_rgba(201,168,76,0.25)]">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 h-20 flex items-center justify-between">
         <Logo />
         <button onClick={openPartnerDialog} className="btn-gold text-[0.6rem] sm:text-[0.72rem] px-4 sm:px-7 py-3 sm:py-4">
