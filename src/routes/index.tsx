@@ -86,7 +86,7 @@ function Logo({ className = "" }: { className?: string }) {
 
 function Nav() {
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-black border-b border-border">
+    <header className="fixed top-0 inset-x-0 z-50 bg-black border-b border-gold/60 shadow-[0_1px_0_0_rgba(201,168,76,0.25)]">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 h-20 flex items-center justify-between">
         <Logo />
         <button onClick={openPartnerDialog} className="btn-gold text-[0.6rem] sm:text-[0.72rem] px-4 sm:px-7 py-3 sm:py-4">
@@ -99,7 +99,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="home" className="relative min-h-screen w-full overflow-hidden">
+    <section id="home" className="relative w-full overflow-hidden border-b border-gold/60" style={{ height: "88vh", minHeight: "640px" }}>
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
@@ -113,7 +113,7 @@ function Hero() {
       <div className="absolute inset-0 hero-overlay" />
       <div className="absolute inset-0 diagonal-texture" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pt-40 pb-24 min-h-screen flex flex-col justify-center">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col justify-center pt-20">
         <div className="flex items-center gap-4 mb-8">
           <span className="gold-rule" />
           <span className="eyebrow">New York City's Overnight Operations Partner</span>
