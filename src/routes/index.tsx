@@ -165,7 +165,6 @@ function Hero() {
         playsInline
         poster={heroPoster}
       >
-        <source src="/hero.mov" type="video/quicktime" />
         <source src="/hero.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 hero-overlay" />
