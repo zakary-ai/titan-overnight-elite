@@ -114,6 +114,15 @@
     white-space: nowrap;
   }
 
+  @keyframes goldPulse {
+    0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+  }
+    display: inline-flex;
+    animation: marquee 28s linear infinite;
+    white-space: nowrap;
+  }
+
   .diagonal-texture {
     background-image: repeating-linear-gradient(
       135deg,
