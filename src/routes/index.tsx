@@ -3,10 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import heroPoster from "@/assets/hero-poster.jpg";
 import founderImg from "@/assets/founder.jpg";
 import titanLogo from "@/assets/titan-logo.png";
-import marriottLogo from "@/assets/brands/marriott.png";
-import hyattLogo from "@/assets/brands/hyatt.png";
-import hiltonLogo from "@/assets/brands/hilton.jpg";
-import sonestaLogo from "@/assets/brands/sonesta.png";
 import { PartnerDialog, openPartnerDialog } from "@/components/partner-dialog";
 
 export const Route = createFileRoute("/")({
