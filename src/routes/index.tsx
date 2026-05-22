@@ -196,7 +196,16 @@ function StatBand() {
     return () => io.disconnect();
   }, []);
   return (
-    <section ref={ref} className="relative border-y border-border bg-charcoal/40">
+    <section ref={ref} className="relative border-y border-border bg-black overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
+        style={{
+          background: "radial-gradient(circle, rgba(201,168,76,0.22) 0%, rgba(201,168,76,0.08) 35%, rgba(0,0,0,0) 70%)",
+          filter: "blur(40px)",
+          animation: "goldPulse 8s ease-in-out infinite",
+        }}
+      />
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-border">
           <StatItem value={365} label="Nights / Year" trigger={trig} />
