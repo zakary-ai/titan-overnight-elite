@@ -571,6 +571,7 @@ function Index() {
       <Nav />
       <main>
         <Hero />
+        <CertMarquee />
         <StatBand />
         <WhoWeAre />
         <Services />
