@@ -2,21 +2,22 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroPoster from "@/assets/hero-poster.jpg";
 import founderImg from "@/assets/founder.jpg";
+import { PartnerDialog, openPartnerDialog } from "@/components/partner-dialog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Titan Solutions — NYC Overnight Operations for Luxury Hotels" },
+      { title: "Titan Solutions, NYC Overnight Operations for Luxury Hotels" },
       {
         name: "description",
         content:
           "New York's overnight operations partner for luxury hospitality. Full FOH and BOH overnight management, documented, supervised, and delivered before your first guest arrives.",
       },
-      { property: "og:title", content: "Titan Solutions — Overnight Operations for Luxury Hotels" },
+      { property: "og:title", content: "Titan Solutions, Overnight Operations for Luxury Hotels" },
       {
         property: "og:description",
         content:
-          "Pristine every morning. Without question. Owner-operated overnight operations for NYC luxury hotels.",
+          "Pristine every morning. Without question. Owner operated overnight operations for NYC luxury hotels.",
       },
     ],
   }),
@@ -115,7 +116,9 @@ function Nav() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a href="#contact" className="btn-gold hidden sm:inline-flex">Become a Partner</a>
+          <button onClick={openPartnerDialog} className="btn-gold hidden sm:inline-flex">
+            Become a Partner
+          </button>
           <button
             aria-label="Menu"
             className="lg:hidden w-10 h-10 border border-border grid place-items-center"
@@ -138,6 +141,12 @@ function Nav() {
                 {n.label}
               </a>
             ))}
+            <button
+              onClick={() => { setOpen(false); openPartnerDialog(); }}
+              className="btn-gold mt-2 sm:hidden"
+            >
+              Become a Partner
+            </button>
           </nav>
         </div>
       )}
@@ -174,17 +183,17 @@ function Hero() {
         </h1>
 
         <p className="reveal mt-8 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
-          Full overnight operations for luxury hospitality properties — documented, supervised, and
+          Full overnight operations for luxury hospitality properties. Documented, supervised, and
           delivered before your first guest arrives.
         </p>
 
         <div className="reveal mt-10 flex flex-wrap gap-4">
-          <a href="#contact" className="btn-gold">Become a Partner →</a>
+          <button onClick={openPartnerDialog} className="btn-gold">Become a Partner →</button>
           <a href="#system" className="btn-ghost-gold">View The Titan System</a>
         </div>
 
         <div className="reveal mt-14 flex flex-wrap gap-x-10 gap-y-3 text-[0.7rem] tracking-wide-2 uppercase text-muted-foreground">
-          {["365 Nights/Year", "NYC Based", "Owner Operated", "CRM Live Reporting"].map((t) => (
+          {["365 Nights/Year", "NYC Based", "Owner Operated"].map((t) => (
             <span key={t} className="flex items-center gap-2">
               <span className="w-1 h-1 bg-gold rounded-full" /> {t}
             </span>
@@ -225,9 +234,9 @@ function StatBand() {
     io.observe(el);
     return () => io.disconnect();
   }, []);
+  const certs = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated"];
   return (
     <section ref={ref} className="relative border-y border-border bg-charcoal/40">
-      <div className="absolute inset-0 diagonal-texture pointer-events-none" />
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-border">
           <StatItem value={365} label="Nights / Year" trigger={trig} />
@@ -236,11 +245,15 @@ function StatBand() {
         </div>
       </div>
       <div className="bg-ink/60 border-t border-border">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-2 text-[0.65rem] tracking-elite text-muted-foreground">
-          {["NSF Certified", "Avendra Approved", "Marriott Partner", "365 Nights Per Year", "CRM Live Reporting", "Owner Operated", "New York Based"].map((t, i, a) => (
-            <span key={t} className="flex items-center gap-6">
-              <span>{t}</span>
-              {i < a.length - 1 && <span className="w-1 h-1 rounded-full bg-gold" />}
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          {certs.map((t, i) => (
+            <span key={t} className="flex items-center gap-8">
+              <span className="font-serif text-base md:text-lg text-foreground/85 font-light">
+                {t}
+              </span>
+              {i < certs.length - 1 && (
+                <span className="hidden md:inline-block w-8 h-px bg-gold/40" />
+              )}
             </span>
           ))}
         </div>
@@ -251,14 +264,14 @@ function StatBand() {
 
 const WHO_CARDS = [
   { n: "01", t: "Communication First", d: "Open, consistent dialogue with hotel management so nothing goes unaddressed and no standard goes unmet." },
-  { n: "02", t: "Transparency Always", d: "Live access to nightly operations through our CRM. Every task, every area, every issue — documented in real time." },
+  { n: "02", t: "Transparency Always", d: "Live access to nightly operations through our CRM. Every task, every area, every issue, documented in real time." },
   { n: "03", t: "Standards Without Compromise", d: "Full uniform every night. The discipline in how we arrive reflects the discipline we bring to every inch of your property." },
-  { n: "04", t: "Long Term Partnership", d: "We're not here for a contract. We're here to become an extension of your team — year after year." },
+  { n: "04", t: "Long Term Partnership", d: "We're not here for a contract. We're here to become an extension of your team, year after year." },
 ];
 
 function WhoWeAre() {
   return (
-    <section id="who" className="relative py-32 lg:py-40 diagonal-texture">
+    <section id="who" className="relative py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           <div className="lg:col-span-5 reveal">
@@ -273,21 +286,17 @@ function WhoWeAre() {
           </div>
           <div className="lg:col-span-7 space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed reveal">
             <p>
-              Titan Solutions is a New York-based overnight operations company built exclusively for luxury hospitality.
-              We manage the full overnight operation across front-of-house and back-of-house spaces — arriving in
-              uniform every night and ensuring every area meets the standard your guests expect by morning.
-            </p>
-            <p>
-              What separates us is not just what we clean — it is how we communicate. Every partner has{" "}
-              <span className="text-foreground font-medium">direct access to our team, our owner, and our systems at all times.</span>{" "}
-              No unresolved issues. No surprises. No excuses.
+              Titan Solutions is a New York based overnight operations company built exclusively for luxury hospitality.
+              We manage the full overnight operation across front of house and back of house spaces, arriving in
+              uniform every night and ensuring every area meets the standard your guests expect by morning. Every partner has{" "}
+              <span className="text-foreground font-medium">direct access to our team, our owner, and our systems at all times.</span>
             </p>
           </div>
         </div>
 
         <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {WHO_CARDS.map((c) => (
-            <div key={c.n} className="card-elite p-8 reveal">
+            <div key={c.n} className="card-elite p-8 reveal rounded-xl">
               <div className="font-serif text-3xl text-gold mb-6">{c.n}</div>
               <div className="text-[0.7rem] tracking-wide-2 uppercase text-foreground font-semibold mb-3">{c.t}</div>
               <p className="text-sm text-muted-foreground leading-relaxed">{c.d}</p>
@@ -300,49 +309,47 @@ function WhoWeAre() {
 }
 
 const SERVICES = [
-  { n: "01", t: "Front of House Operations", d: "Full overnight cleaning and resetting of guest-facing spaces — lobbies, lounges, bars, staircases, elevators, restrooms, and every area your guests will encounter by morning.", tag: "Core Service" },
-  { n: "02", t: "Back of House Operations", d: "Complete overnight maintenance of employee and service areas — corridors, locker rooms, cafeteria, loading dock, trash rooms, and service elevators across every level.", tag: "Core Service" },
-  { n: "03", t: "Kitchen & Culinary Support", d: "NSF certified and NFPA 96 compliant overnight kitchen cleaning. Hot lines, prep areas, pastry kitchens, garde manger, and all service areas restored nightly.", tag: "Certified" },
-  { n: "04", t: "Stone & Marble Maintenance", d: "Specialized care for natural stone, marble, and specialty surfaces that define luxury hospitality. Scheduled restoration to protect your property's most valuable surfaces.", tag: "Specialty" },
-  { n: "05", t: "Deep Cleaning & Specialty Projects", d: "Scheduled deep cleaning, carpet extraction, hard floor maintenance, power washing, window washing, and any specialty project — handled by the team that already knows your building.", tag: "Scheduled" },
+  { n: "01", t: "Front of House Operations", d: "Overnight cleaning and resetting of all guest facing spaces by morning.", tag: "Core" },
+  { n: "02", t: "Back of House Operations", d: "Complete overnight maintenance of employee and service areas across every level.", tag: "Core" },
+  { n: "03", t: "Kitchen & Culinary Support", d: "NSF certified, NFPA 96 compliant overnight kitchen cleaning, restored nightly.", tag: "Certified" },
+  { n: "04", t: "Stone & Marble Maintenance", d: "Specialized care for natural stone and specialty surfaces that define luxury.", tag: "Specialty" },
+  { n: "05", t: "Deep Cleaning Projects", d: "Carpet extraction, hard floor, power washing, window washing on schedule.", tag: "Scheduled" },
+  { n: "06", t: "Custom Specialty Work", d: "Any project, handled by the team that already knows your building.", tag: "On Request" },
 ];
 
 function Services() {
   return (
-    <section id="services" className="relative py-32 lg:py-40 bg-ink/40 border-y border-border">
+    <section id="services" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="reveal">
+        <div className="reveal max-w-4xl">
           <div className="flex items-center gap-4 mb-8">
             <span className="gold-rule" />
             <span className="eyebrow">What We Do</span>
           </div>
-          <h2 className="font-serif text-5xl md:text-7xl leading-[1.03] max-w-5xl">
+          <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
             Everything your property <span className="italic text-gold">needs overnight.</span><br />
             Nothing it doesn't.
           </h2>
-          <p className="mt-8 max-w-2xl text-muted-foreground text-lg leading-relaxed">
-            Our core focus is the full overnight FOH and BOH operation. Beyond that, we offer a complete range of
-            specialty services — all executed by the same team that knows your property inside and out.
-          </p>
         </div>
 
-        <div className="mt-16 space-y-px">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((s) => (
             <article
               key={s.n}
-              className="reveal group relative grid md:grid-cols-12 gap-6 items-start p-8 md:p-10 card-elite"
+              className="reveal card-elite rounded-2xl p-7 flex flex-col gap-5 min-h-[220px]"
             >
-              <div className="md:col-span-2 font-serif text-4xl md:text-5xl text-gold">{s.n}</div>
-              <div className="md:col-span-7">
-                <h3 className="text-[0.78rem] tracking-wide-2 uppercase font-semibold mb-3">{s.t}</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.d}</p>
-              </div>
-              <div className="md:col-span-3 flex md:justify-end">
-                <span className="border border-gold/60 text-gold text-[0.62rem] tracking-elite px-3 py-2">
+              <div className="flex items-center justify-between">
+                <span className="w-10 h-10 rounded-full border border-gold/50 grid place-items-center font-serif text-gold text-sm">
+                  {s.n}
+                </span>
+                <span className="text-[0.6rem] tracking-elite uppercase text-gold/80 border border-gold/30 rounded-full px-3 py-1">
                   {s.tag}
                 </span>
               </div>
-              <span className="absolute left-0 top-0 bottom-0 w-px bg-gold scale-y-0 origin-top group-hover:scale-y-100 transition-transform duration-500" />
+              <div>
+                <h3 className="font-serif text-2xl text-foreground mb-2">{s.t}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -351,72 +358,57 @@ function Services() {
   );
 }
 
-function PortalMock() {
+function PortalEmbed() {
   return (
-    <div className="card-elite p-6 md:p-8 relative">
-      <div className="flex items-center justify-between border-b border-border pb-4 mb-6">
+    <div className="card-elite rounded-2xl p-4 md:p-5 relative">
+      <div className="flex items-center justify-between border-b border-border pb-3 mb-4 px-2">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 border border-gold/60 rotate-45 grid place-items-center">
             <span className="-rotate-45 font-serif text-gold text-sm">T</span>
           </div>
           <div>
-            <div className="text-[0.65rem] tracking-elite text-muted-foreground">Property Portal</div>
-            <div className="text-sm font-medium">Marriott Autograph — Manhattan</div>
+            <div className="text-[0.6rem] tracking-elite text-muted-foreground">Property Portal</div>
+            <div className="text-sm font-medium">Live Operations</div>
           </div>
         </div>
-        <span className="flex items-center gap-2 text-[0.65rem] tracking-elite text-gold">
+        <span className="flex items-center gap-2 text-[0.6rem] tracking-elite text-gold">
           <span className="w-2 h-2 rounded-full bg-gold animate-pulse" /> Live Shift
         </span>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {[
-          { l: "Areas Completed", v: "47 / 52" },
-          { l: "Photos Uploaded", v: "184" },
-          { l: "Issues Resolved", v: "3 / 3" },
-          { l: "Supervisor", v: "Verified" },
-        ].map((s) => (
-          <div key={s.l} className="border border-border p-4 bg-background/40">
-            <div className="text-[0.6rem] tracking-elite text-muted-foreground">{s.l}</div>
-            <div className="mt-2 font-serif text-2xl text-gold">{s.v}</div>
+      <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-border bg-background">
+        {/* TODO: replace src with the real portal embed URL */}
+        <iframe
+          title="Titan Portal"
+          src="about:blank"
+          className="absolute inset-0 w-full h-full"
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          sandbox="allow-scripts allow-same-origin allow-forms"
+        />
+        <div className="absolute inset-0 grid place-items-center pointer-events-none text-center px-6">
+          <div>
+            <div className="text-[0.6rem] tracking-elite text-gold mb-2">Portal Embed</div>
+            <p className="font-serif text-xl text-muted-foreground">
+              Live portal will appear here.
+            </p>
           </div>
-        ))}
-      </div>
-
-      <div className="mt-6 space-y-3">
-        {[
-          { a: "Lobby — Marble polish", s: "Complete", t: "02:14" },
-          { a: "Executive Lounge", s: "Complete", t: "03:02" },
-          { a: "BOH Corridor 3", s: "In Progress", t: "04:18" },
-          { a: "Kitchen Hot Line", s: "Queued", t: "—" },
-        ].map((row) => (
-          <div key={row.a} className="flex items-center justify-between border-b border-border/60 pb-3 text-sm">
-            <span>{row.a}</span>
-            <span className="flex items-center gap-4">
-              <span className={`text-[0.65rem] tracking-elite ${row.s === "Complete" ? "text-gold" : "text-muted-foreground"}`}>{row.s}</span>
-              <span className="text-muted-foreground text-xs tabular-nums">{row.t}</span>
-            </span>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-6 flex justify-end">
-        <a href="#contact" className="btn-gold text-[0.65rem]">View Your Portal →</a>
+        </div>
       </div>
     </div>
   );
 }
 
 const SYSTEM_BENEFITS = [
-  { n: "01", t: "Live Access For Your Team", d: "Hotel management has real-time visibility into every shift through our platform. Every area assigned, every task tracked, every completion verified — as it happens." },
-  { n: "02", t: "Supervisor Verification", d: "Nothing is marked complete without physical verification by our on-site working supervisor. Every area inspected before the shift closes." },
-  { n: "03", t: "Photo Documentation Every Night", d: "End-of-shift photos uploaded for every space. Your team receives a visual record of the completed operation each morning — no phone calls required." },
-  { n: "04", t: "Zero Unresolved Issues", d: "Every issue identified overnight is logged, assigned, and resolved before it reaches your team. Nothing falls through the cracks — ever." },
+  { n: "01", t: "Live Access For Your Team", d: "Real time visibility into every shift. Every area assigned, every task tracked, every completion verified as it happens." },
+  { n: "02", t: "Supervisor Verification", d: "Nothing is marked complete without physical verification by our on site working supervisor." },
+  { n: "03", t: "Photo Documentation Nightly", d: "End of shift photos uploaded for every space. A visual record of the completed operation each morning." },
+  { n: "04", t: "Zero Unresolved Issues", d: "Every issue identified overnight is logged, assigned, and resolved before it reaches your team." },
 ];
 
 function TitanSystem() {
   return (
-    <section id="system" className="relative py-32 lg:py-40">
+    <section id="system" className="relative py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-6 reveal">
@@ -430,20 +422,20 @@ function TitanSystem() {
               Every single night.
             </h2>
             <p className="mt-8 text-muted-foreground text-lg leading-relaxed max-w-xl">
-              Most overnight vendors ask you to trust them. Titan Solutions shows you. Our centralized CRM gives
-              hotel management live access to every shift in real time — tasks assigned, areas verified, issues
-              logged, and photos uploaded before your team arrives in the morning.
+              Most overnight vendors ask you to trust them. Titan Solutions shows you. Our centralized
+              CRM gives hotel management live access to every shift, with tasks, verifications, and
+              photos uploaded before your team arrives.
             </p>
             <p className="mt-4 text-foreground font-medium">You will never wonder what happened overnight. You will know.</p>
           </div>
           <div className="lg:col-span-6 reveal">
-            <PortalMock />
+            <PortalEmbed />
           </div>
         </div>
 
-        <div className="mt-24 grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+        <div className="mt-24 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {SYSTEM_BENEFITS.map((b) => (
-            <div key={b.n} className="reveal bg-background p-8 hover:bg-charcoal/60 transition-colors">
+            <div key={b.n} className="reveal card-elite rounded-xl p-7">
               <div className="font-serif text-3xl text-gold mb-5">{b.n}</div>
               <div className="text-[0.7rem] tracking-wide-2 uppercase font-semibold mb-3">{b.t}</div>
               <p className="text-sm text-muted-foreground leading-relaxed">{b.d}</p>
@@ -457,7 +449,7 @@ function TitanSystem() {
 
 function Leadership() {
   return (
-    <section id="leadership" className="relative py-32 lg:py-40 bg-ink/40 border-y border-border">
+    <section id="leadership" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="reveal mb-16">
           <div className="flex items-center gap-4 mb-8">
@@ -471,22 +463,18 @@ function Leadership() {
           <div className="mt-8 max-w-3xl space-y-5 text-muted-foreground text-lg leading-relaxed">
             <p>
               At Titan Solutions, leadership is not a title on a contract. Our founder is actively involved in the
-              oversight of every property partnership we maintain — present during onboarding, present during
-              weekly site reviews, and directly reachable at any hour.
-            </p>
-            <p>
-              When our partners reach out, they speak directly to decision makers. Not account managers. Not call
-              centers. The people accountable for your property.
+              oversight of every property partnership we maintain, present during onboarding, weekly site reviews,
+              and directly reachable at any hour. When our partners reach out, they speak directly to decision makers.
             </p>
           </div>
         </div>
 
-        <div className="reveal grid lg:grid-cols-12 gap-10 card-elite p-8 md:p-12">
+        <div className="reveal grid lg:grid-cols-12 gap-10 card-elite rounded-2xl p-8 md:p-12">
           <div className="lg:col-span-4">
-            <div className="relative aspect-[4/5] overflow-hidden">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
               <img
                 src={founderImg}
-                alt="Frank Boccia, Founder & President of Titan Solutions"
+                alt="Frank Boccia, Founder and President of Titan Solutions"
                 className="w-full h-full object-cover grayscale-[20%]"
                 loading="lazy"
                 width={1024}
@@ -498,14 +486,14 @@ function Leadership() {
           <div className="lg:col-span-8">
             <h3 className="font-serif text-4xl text-gold italic">Frank Boccia</h3>
             <div className="mt-2 text-[0.7rem] tracking-elite text-muted-foreground">
-              Founder & President — Titan Solutions
+              Founder and President, Titan Solutions
             </div>
             <ul className="mt-8 space-y-4">
               {[
                 "Structured weekly property reviews conducted alongside hotel management",
-                "Direct leadership access — 24 hours a day, 365 days a year",
+                "Direct leadership access, 24 hours a day, 365 days a year",
                 "Immediate response to any concern at any partner property",
-                "Personal accountability on every contract — without exception",
+                "Personal accountability on every contract, without exception",
               ].map((b) => (
                 <li key={b} className="flex gap-3 text-muted-foreground">
                   <span className="mt-2 w-1.5 h-1.5 bg-gold rounded-full shrink-0" />
@@ -526,7 +514,7 @@ function Leadership() {
               </div>
               <div>
                 <div className="text-[0.6rem] tracking-elite text-gold mb-1">Based</div>
-                New York, NY — Around the clock
+                New York, NY, around the clock
               </div>
             </div>
           </div>
@@ -538,53 +526,39 @@ function Leadership() {
 
 function Partners() {
   return (
-    <section id="partners" className="relative py-32 lg:py-40">
+    <section id="partners" className="relative py-24 lg:py-32">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-5 reveal">
-            <div className="flex items-center gap-4 mb-8">
-              <span className="gold-rule" />
-              <span className="eyebrow">Trusted Hospitality Brands</span>
-            </div>
-            <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
-              Built for the brands<br />
-              <span className="italic text-gold">that demand the best.</span>
-            </h2>
+        <div className="reveal max-w-3xl">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="gold-rule" />
+            <span className="eyebrow">Trusted Hospitality Brands</span>
           </div>
-
-          <div className="lg:col-span-7 reveal">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
-              {["MARRIOTT", "HYATT", "HILTON", "SONESTA"].map((b) => (
-                <div
-                  key={b}
-                  className="bg-background h-28 grid place-items-center group hover:bg-charcoal/60 transition-colors"
-                >
-                  <span className="font-serif text-xl tracking-[0.3em] text-muted-foreground group-hover:text-gold transition-colors">
-                    {b}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <blockquote className="reveal mt-10 border-l-2 border-gold pl-6 py-2">
-              <p className="font-serif italic text-2xl md:text-3xl leading-snug text-foreground">
-                "Active overnight operations contract at a Marriott Autograph Collection property in New York
-                City. Multi-year partnership. Zero service failures. Zero gaps in coverage."
-              </p>
-              <footer className="mt-4 text-[0.65rem] tracking-elite text-muted-foreground">
-                Titan Solutions — Active Engagement
-              </footer>
-            </blockquote>
-          </div>
+          <h2 className="font-serif text-4xl md:text-5xl leading-[1.1]">
+            Built for the brands<br />
+            <span className="italic text-gold">that demand the best.</span>
+          </h2>
         </div>
 
-        <blockquote className="reveal mt-24 max-w-5xl mx-auto text-center">
-          <p className="font-serif italic text-3xl md:text-4xl leading-snug">
+        <div className="reveal mt-14 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 py-8 border-y border-border/60">
+          {["MARRIOTT", "HYATT", "HILTON", "SONESTA"].map((b, i, a) => (
+            <div key={b} className="flex items-center gap-12">
+              <span className="font-serif text-2xl md:text-3xl tracking-[0.25em] text-muted-foreground/70 hover:text-gold transition-colors">
+                {b}
+              </span>
+              {i < a.length - 1 && (
+                <span className="hidden md:inline-block w-px h-6 bg-border" />
+              )}
+            </div>
+          ))}
+        </div>
+
+        <blockquote className="reveal mt-16 max-w-4xl mx-auto text-center">
+          <p className="font-serif italic text-2xl md:text-3xl leading-snug text-foreground/90">
             "Our partners walk in every morning and overnight operations are not something they have to think about.
-            That is exactly what we set out to deliver — and it is what we deliver every single night."
+            That is exactly what we set out to deliver, and it is what we deliver every single night."
           </p>
           <footer className="mt-6 text-[0.65rem] tracking-elite text-gold">
-            Frank Boccia — Founder & President, Titan Solutions
+            Frank Boccia, Founder and President, Titan Solutions
           </footer>
         </blockquote>
       </div>
@@ -594,8 +568,7 @@ function Partners() {
 
 function FinalCTA() {
   return (
-    <section id="contact" className="relative py-32 lg:py-40 border-t border-border overflow-hidden">
-      <div className="absolute inset-0 diagonal-texture" />
+    <section id="contact" className="relative py-24 lg:py-32 border-t border-border overflow-hidden">
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
       <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 text-center">
         <div className="reveal flex items-center justify-center gap-4 mb-8">
@@ -613,26 +586,8 @@ function FinalCTA() {
         </p>
 
         <div className="reveal mt-12 flex flex-wrap justify-center gap-4">
-          <a href="mailto:frank@titansolutionsco.com" className="btn-gold">Become a Partner →</a>
+          <button onClick={openPartnerDialog} className="btn-gold">Become a Partner →</button>
           <a href="tel:3474088559" className="btn-ghost-gold">Call Frank</a>
-          <a href="mailto:frank@titansolutionsco.com" className="btn-ghost-gold">Email Frank</a>
-        </div>
-
-        <div className="reveal mt-20 card-elite p-8 md:p-10 text-left max-w-3xl mx-auto">
-          <div className="flex items-start gap-5">
-            <div className="w-12 h-12 border border-gold/60 rotate-45 grid place-items-center shrink-0">
-              <span className="-rotate-45 text-gold font-serif text-lg">✓</span>
-            </div>
-            <div>
-              <div className="text-[0.7rem] tracking-wide-2 uppercase text-gold font-semibold mb-2">
-                Seamless transition guaranteed
-              </div>
-              <p className="text-muted-foreground leading-relaxed">
-                Titan Solutions handles onboarding, learns your property before the first shift, and becomes fully
-                operational from night one — no gaps, no disruptions, no compromises.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -645,7 +600,7 @@ function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12 grid md:grid-cols-3 gap-10 items-start">
         <Logo />
         <div className="text-sm text-muted-foreground leading-relaxed">
-          Overnight operations for luxury hospitality. Owner-operated. New York City.
+          Overnight operations for luxury hospitality. Owner operated. New York City.
         </div>
         <div className="text-sm md:text-right space-y-1 text-muted-foreground">
           <div>frank@titansolutionsco.com</div>
@@ -660,17 +615,6 @@ function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function MobileStickyCTA() {
-  return (
-    <a
-      href="#contact"
-      className="lg:hidden fixed bottom-4 left-4 right-4 z-40 btn-gold shadow-2xl"
-    >
-      Become a Partner →
-    </a>
   );
 }
 
@@ -690,7 +634,7 @@ function Index() {
         <FinalCTA />
       </main>
       <Footer />
-      <MobileStickyCTA />
+      <PartnerDialog />
     </div>
   );
 }
