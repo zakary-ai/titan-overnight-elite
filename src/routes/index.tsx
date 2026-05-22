@@ -3,6 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import heroPoster from "@/assets/hero-poster.jpg";
 import founderImg from "@/assets/founder.jpg";
 import titanLogo from "@/assets/titan-logo.png";
+import marriottLogo from "@/assets/brands/marriott.png";
+import hyattLogo from "@/assets/brands/hyatt.png";
+import hiltonLogo from "@/assets/brands/hilton.jpg";
+import sonestaLogo from "@/assets/brands/sonesta.png";
 import { PartnerDialog, openPartnerDialog } from "@/components/partner-dialog";
 
 export const Route = createFileRoute("/")({
@@ -485,17 +489,34 @@ function Partners() {
           </h2>
         </div>
 
-        <div className="reveal mt-14 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 py-8 border-y border-border/60">
-          {["MARRIOTT", "HYATT", "HILTON", "SONESTA"].map((b, i, a) => (
-            <div key={b} className="flex items-center gap-12">
-              <span className="font-serif text-2xl md:text-3xl tracking-[0.25em] text-muted-foreground/70 hover:text-gold transition-colors">
-                {b}
-              </span>
-              {i < a.length - 1 && (
-                <span className="hidden md:inline-block w-px h-6 bg-border" />
-              )}
-            </div>
-          ))}
+        <div
+          className="reveal mt-14 overflow-hidden relative py-10 border-y border-gold/40 bg-black"
+          style={{
+            maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+            WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
+          }}
+        >
+          <div className="marquee-track items-center">
+            {[...Array(2)].map((_, dup) => (
+              <div key={dup} className="flex items-center shrink-0">
+                {[
+                  { src: marriottLogo, alt: "Marriott" },
+                  { src: hyattLogo, alt: "Hyatt" },
+                  { src: hiltonLogo, alt: "Hilton" },
+                  { src: sonestaLogo, alt: "Sonesta" },
+                ].map((b) => (
+                  <div key={`${dup}-${b.alt}`} className="flex items-center justify-center px-10 sm:px-16">
+                    <img
+                      src={b.src}
+                      alt={b.alt}
+                      className="h-10 sm:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                      style={{ filter: "brightness(0) invert(1)" }}
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         <blockquote className="reveal mt-16 max-w-4xl mx-auto text-center">
