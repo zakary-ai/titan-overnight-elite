@@ -553,7 +553,7 @@ function FinalCTA() {
 
         <div className="reveal mt-12 flex flex-wrap justify-center gap-4">
           <button onClick={openPartnerDialog} className="btn-gold">Become a Partner →</button>
-          <a href="tel:3474088559" className="btn-ghost-gold">Call Frank</a>
+          <a href="tel:3474088559" className="btn-ghost-gold">Call Us</a>
         </div>
       </div>
     </section>

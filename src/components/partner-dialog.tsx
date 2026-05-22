@@ -93,7 +93,7 @@ export function PartnerDialog() {
             Begin the conversation.
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            Tell us about your property. Frank responds personally within 24 hours.
+            Tell us about your property. Someone will reach out to you within 24 hours.
           </DialogDescription>
         </DialogHeader>
 
