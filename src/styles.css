@@ -115,8 +115,36 @@
   }
 
   @keyframes goldPulse {
-    0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
-    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+    0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.08); }
+  }
+  @keyframes goldDrift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(40px, -30px); }
+  }
+
+  .glow-orb {
+    position: absolute;
+    border-radius: 9999px;
+    pointer-events: none;
+    filter: blur(80px);
+    background: radial-gradient(circle, rgba(201,168,76,0.45) 0%, rgba(201,168,76,0.15) 40%, rgba(0,0,0,0) 75%);
+  }
+  .glow-orb-soft {
+    position: absolute;
+    border-radius: 9999px;
+    pointer-events: none;
+    filter: blur(120px);
+    background: radial-gradient(circle, rgba(201,168,76,0.28) 0%, rgba(201,168,76,0.08) 45%, rgba(0,0,0,0) 75%);
+  }
+  .grid-overlay {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(201,168,76,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(201,168,76,0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(circle at center, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle at center, #000 30%, transparent 75%);
   }
 
 
