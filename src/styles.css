@@ -214,7 +214,8 @@
     font-weight: 500;
   }
 
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal { opacity: 1; transform: none; transition: opacity .5s ease, transform .5s ease; }
+  body.reveal-ready .reveal:not(.in) { opacity: 0; transform: translateY(16px); }
   .reveal.in { opacity: 1; transform: none; }
 
   @keyframes shimmer {
