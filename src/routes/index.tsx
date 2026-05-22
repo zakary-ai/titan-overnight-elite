@@ -220,7 +220,9 @@ const WHO_CARDS = [
 
 function WhoWeAre() {
   return (
-    <section id="who" className="relative py-24 lg:py-32">
+    <section id="who" className="relative py-24 lg:py-32 overflow-hidden">
+      <div className="grid-overlay" />
+      <div className="glow-orb-soft w-[600px] h-[600px] -right-40 top-20" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           <div className="lg:col-span-5 reveal">
