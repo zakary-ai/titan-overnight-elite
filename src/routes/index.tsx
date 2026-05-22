@@ -171,39 +171,40 @@ function Hero() {
       <div className="absolute inset-0 diagonal-texture" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pt-40 pb-24 min-h-screen flex flex-col justify-center">
-        <div className="flex items-center gap-4 mb-8 reveal">
+        <div className="flex items-center gap-4 mb-8">
           <span className="gold-rule" />
           <span className="eyebrow">New York City's Overnight Operations Partner</span>
         </div>
 
-        <h1 className="reveal font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] max-w-5xl">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] max-w-5xl">
           Your property.<br />
           <span className="italic text-gold">Pristine every morning.</span><br />
           Without question.
         </h1>
 
-        <p className="reveal mt-8 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
+        <p className="mt-8 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
           Full overnight operations for luxury hospitality properties. Documented, supervised, and
           delivered before your first guest arrives.
         </p>
 
-        <div className="reveal mt-10 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-wrap gap-4">
           <button onClick={openPartnerDialog} className="btn-gold">Become a Partner →</button>
           <a href="#system" className="btn-ghost-gold">View The Titan System</a>
         </div>
 
-        <div className="reveal mt-14 flex flex-wrap gap-x-10 gap-y-3 text-[0.7rem] tracking-wide-2 uppercase text-muted-foreground">
-          {["365 Nights/Year", "NYC Based", "Owner Operated"].map((t) => (
-            <span key={t} className="flex items-center gap-2">
-              <span className="w-1 h-1 bg-gold rounded-full" /> {t}
-            </span>
-          ))}
+        <div className="mt-14 overflow-hidden relative" style={{ maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)" }}>
+          <div className="marquee-track text-[0.7rem] tracking-wide-2 uppercase text-muted-foreground">
+            {[...Array(2)].map((_, dup) => (
+              <div key={dup} className="flex items-center shrink-0">
+                {["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"].map((t) => (
+                  <span key={`${dup}-${t}`} className="flex items-center gap-3 pr-10">
+                    <span className="w-1 h-1 bg-gold rounded-full" /> {t}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-[0.6rem] tracking-elite text-muted-foreground flex flex-col items-center gap-3">
-        SCROLL
-        <span className="w-px h-10 bg-gradient-to-b from-gold to-transparent" />
       </div>
     </section>
   );
