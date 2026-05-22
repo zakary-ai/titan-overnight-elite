@@ -35,30 +35,6 @@ const NAV = [
   { id: "contact", label: "Contact" },
 ];
 
-function useReveal() {
-  useEffect(() => {
-    document.body.classList.add("reveal-ready");
-    const els = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" }
-    );
-    els.forEach((el) => io.observe(el));
-    // Failsafe: anything still not revealed after 600ms gets shown.
-    const t = setTimeout(() => {
-      document.querySelectorAll(".reveal:not(.in)").forEach((el) => el.classList.add("in"));
-    }, 600);
-    return () => { io.disconnect(); clearTimeout(t); };
-  }, []);
-}
-
 function useCountUp(target: number, trigger: boolean, duration = 1600) {
   const [val, setVal] = useState(0);
   useEffect(() => {
@@ -604,7 +580,6 @@ function Footer() {
 }
 
 function Index() {
-  useReveal();
   return (
     <div className="bg-background text-foreground min-h-screen">
       <Nav />
