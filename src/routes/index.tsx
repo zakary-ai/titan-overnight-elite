@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroPoster from "@/assets/hero-poster.jpg";
 import founderImg from "@/assets/founder.jpg";
+import titanLogo from "@/assets/titan-logo.png";
 import { PartnerDialog, openPartnerDialog } from "@/components/partner-dialog";
 
 export const Route = createFileRoute("/")({
@@ -73,83 +74,25 @@ function useCountUp(target: number, trigger: boolean, duration = 1600) {
 
 function Logo({ className = "" }: { className?: string }) {
   return (
-    <a href="#home" className={`flex items-center gap-3 group ${className}`}>
-      <div className="w-9 h-9 border border-gold/70 rotate-45 grid place-items-center transition group-hover:bg-gold/10">
-        <span className="-rotate-45 font-serif text-gold text-lg leading-none">T</span>
-      </div>
-      <div className="leading-none">
-        <div className="font-serif text-xl tracking-wide text-foreground">TITAN</div>
-        <div className="text-[0.55rem] tracking-elite text-gold mt-1">SOLUTIONS</div>
-      </div>
+    <a href="#home" className={`flex items-center group ${className}`}>
+      <img
+        src={titanLogo}
+        alt="Titan Solutions, Maintaining Properties, Elevating Standards"
+        className="h-12 sm:h-14 w-auto object-contain"
+      />
     </a>
   );
 }
 
 function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border"
-          : "bg-gradient-to-b from-black/70 to-transparent"
-      }`}
-    >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+    <header className="fixed top-0 inset-x-0 z-50 bg-black border-b border-border">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 h-20 flex items-center justify-between">
         <Logo />
-        <nav className="hidden lg:flex items-center gap-9">
-          {NAV.map((n) => (
-            <a
-              key={n.id}
-              href={`#${n.id}`}
-              className="text-[0.7rem] tracking-wide-2 uppercase text-muted-foreground hover:text-gold transition-colors"
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
-        <div className="flex items-center gap-3">
-          <button onClick={openPartnerDialog} className="btn-gold hidden sm:inline-flex">
-            Become a Partner
-          </button>
-          <button
-            aria-label="Menu"
-            className="lg:hidden w-10 h-10 border border-border grid place-items-center"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span className="block w-4 h-px bg-foreground relative before:content-[''] before:absolute before:-top-1.5 before:left-0 before:w-4 before:h-px before:bg-foreground after:content-[''] after:absolute after:top-1.5 after:left-0 after:w-4 after:h-px after:bg-foreground" />
-          </button>
-        </div>
+        <button onClick={openPartnerDialog} className="btn-gold text-[0.6rem] sm:text-[0.72rem] px-4 sm:px-7 py-3 sm:py-4">
+          Become a Partner
+        </button>
       </div>
-      {open && (
-        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur">
-          <nav className="px-6 py-6 flex flex-col gap-4">
-            {NAV.map((n) => (
-              <a
-                key={n.id}
-                href={`#${n.id}`}
-                onClick={() => setOpen(false)}
-                className="text-xs tracking-wide-2 uppercase text-muted-foreground hover:text-gold"
-              >
-                {n.label}
-              </a>
-            ))}
-            <button
-              onClick={() => { setOpen(false); openPartnerDialog(); }}
-              className="btn-gold mt-2 sm:hidden"
-            >
-              Become a Partner
-            </button>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
