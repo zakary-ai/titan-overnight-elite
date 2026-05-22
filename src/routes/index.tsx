@@ -500,8 +500,6 @@ function Partners() {
                   { name: "HYATT", font: "font-sans", tracking: "tracking-[0.35em]" },
                   { name: "HILTON", font: "font-serif", tracking: "tracking-[0.18em]" },
                   { name: "SONESTA", font: "font-sans", tracking: "tracking-[0.3em]" },
-                  { name: "FOUR SEASONS", font: "font-serif", tracking: "tracking-[0.22em]" },
-                  { name: "RITZ CARLTON", font: "font-serif", tracking: "tracking-[0.22em]" },
                 ].map((b) => (
                   <div
                     key={`${dup}-${b.name}`}
