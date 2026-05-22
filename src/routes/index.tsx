@@ -500,23 +500,28 @@ function Partners() {
             {[...Array(2)].map((_, dup) => (
               <div key={dup} className="flex items-center shrink-0">
                 {[
-                  { src: marriottLogo, alt: "Marriott" },
-                  { src: hyattLogo, alt: "Hyatt" },
-                  { src: hiltonLogo, alt: "Hilton" },
-                  { src: sonestaLogo, alt: "Sonesta" },
+                  { name: "MARRIOTT", font: "font-serif", tracking: "tracking-[0.25em]" },
+                  { name: "HYATT", font: "font-sans", tracking: "tracking-[0.35em]" },
+                  { name: "HILTON", font: "font-serif", tracking: "tracking-[0.18em]" },
+                  { name: "SONESTA", font: "font-sans", tracking: "tracking-[0.3em]" },
+                  { name: "FOUR SEASONS", font: "font-serif", tracking: "tracking-[0.22em]" },
+                  { name: "RITZ CARLTON", font: "font-serif", tracking: "tracking-[0.22em]" },
                 ].map((b) => (
-                  <div key={`${dup}-${b.alt}`} className="flex items-center justify-center px-10 sm:px-16">
-                    <img
-                      src={b.src}
-                      alt={b.alt}
-                      className="h-10 sm:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-                      style={{ filter: "brightness(0) invert(1)" }}
-                    />
+                  <div
+                    key={`${dup}-${b.name}`}
+                    className="flex items-center justify-center px-10 sm:px-16 shrink-0"
+                  >
+                    <span
+                      className={`${b.font} ${b.tracking} text-xl sm:text-2xl md:text-3xl font-light text-foreground/70 hover:text-gold transition-colors whitespace-nowrap`}
+                    >
+                      {b.name}
+                    </span>
                   </div>
                 ))}
               </div>
             ))}
           </div>
+
         </div>
 
         <blockquote className="reveal mt-16 max-w-4xl mx-auto text-center">
