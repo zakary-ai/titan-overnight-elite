@@ -235,7 +235,6 @@ function StatBand() {
     io.observe(el);
     return () => io.disconnect();
   }, []);
-  const certs = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated"];
   return (
     <section ref={ref} className="relative border-y border-border bg-charcoal/40">
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -243,20 +242,6 @@ function StatBand() {
           <StatItem value={365} label="Nights / Year" trigger={trig} />
           <StatItem value={5} suffix="+" label="Years Active" trigger={trig} />
           <StatItem value={5} suffix="★" label="Luxury Properties" trigger={trig} />
-        </div>
-      </div>
-      <div className="bg-ink/60 border-t border-border">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-          {certs.map((t, i) => (
-            <span key={t} className="flex items-center gap-8">
-              <span className="font-serif text-base md:text-lg text-foreground/85 font-light">
-                {t}
-              </span>
-              {i < certs.length - 1 && (
-                <span className="hidden md:inline-block w-8 h-px bg-gold/40" />
-              )}
-            </span>
-          ))}
         </div>
       </div>
     </section>
