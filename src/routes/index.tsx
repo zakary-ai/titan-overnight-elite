@@ -278,35 +278,58 @@ function Services() {
   );
 }
 
-function PortalEmbed() {
+function IPhonePortal() {
   return (
-    <div className="card-elite rounded-2xl p-4 md:p-5 relative">
-      <div className="flex items-center justify-between border-b border-border pb-3 mb-4 px-2">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 border border-gold/60 rotate-45 grid place-items-center">
-            <span className="-rotate-45 font-serif text-gold text-sm">T</span>
-          </div>
-          <div>
-            <div className="text-[0.6rem] tracking-elite text-muted-foreground">Property Portal</div>
-            <div className="text-sm font-medium">Live Operations</div>
-          </div>
+    <div className="relative mx-auto" style={{ width: "min(360px, 80vw)" }}>
+      <div className="absolute -inset-10 bg-gold/10 blur-3xl rounded-full -z-10" />
+      <div
+        className="relative bg-black rounded-[3rem] p-[14px] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7),0_0_0_2px_rgba(212,175,55,0.15)]"
+        style={{ aspectRatio: "9 / 19.5" }}
+      >
+        <span className="absolute left-[-3px] top-[110px] w-[3px] h-[32px] bg-neutral-800 rounded-l" />
+        <span className="absolute left-[-3px] top-[170px] w-[3px] h-[56px] bg-neutral-800 rounded-l" />
+        <span className="absolute left-[-3px] top-[240px] w-[3px] h-[56px] bg-neutral-800 rounded-l" />
+        <span className="absolute right-[-3px] top-[180px] w-[3px] h-[80px] bg-neutral-800 rounded-r" />
+        <div className="relative w-full h-full rounded-[2.4rem] overflow-hidden bg-background">
+          <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[90px] h-[26px] bg-black rounded-full z-20" />
+          <iframe
+            title="Titan Portal"
+            src="https://titan-cleaning-solutions.lovable.app/demo"
+            className="absolute inset-0 w-full h-full"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin allow-forms"
+          />
         </div>
-        <span className="flex items-center gap-2 text-[0.6rem] tracking-elite text-gold">
-          <span className="w-2 h-2 rounded-full bg-gold animate-pulse" /> Live Shift
-        </span>
-      </div>
-
-      <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-border bg-background">
-        <iframe
-          title="Titan Portal"
-          src="https://titan-cleaning-solutions.lovable.app/demo"
-          className="absolute inset-0 w-full h-full"
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          sandbox="allow-scripts allow-same-origin allow-forms"
-        />
       </div>
     </div>
+  );
+}
+
+function PortalShowcase() {
+  return (
+    <section id="portal" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
+      <div className="glow-orb-soft -z-10 w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-10" />
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="reveal mb-16 max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="gold-rule" />
+            <span className="eyebrow">Live Portal</span>
+            <span className="gold-rule" />
+          </div>
+          <h2 className="font-serif text-4xl md:text-5xl leading-[1.1]">
+            See the operation <span className="italic text-gold">in your hand.</span>
+          </h2>
+          <p className="mt-6 text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+            Open the Titan portal from anywhere. Tap through tonight's shift, see every task, every
+            verification, every photo, in real time.
+          </p>
+        </div>
+        <div className="reveal flex justify-center">
+          <IPhonePortal />
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -323,27 +346,23 @@ function TitanSystem() {
       <div className="grid-overlay -z-10" />
       <div className="glow-orb -z-10 w-[500px] h-[500px] left-1/2 -translate-x-1/2 top-10" style={{ animation: "goldPulse 9s ease-in-out infinite" }} />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-6 reveal">
-            <div className="flex items-center gap-4 mb-8">
-              <span className="gold-rule" />
-              <span className="eyebrow">The Titan System</span>
-            </div>
-            <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
-              Your overnight operation.<br />
-              <span className="italic text-gold">Completely visible.</span><br />
-              Every single night.
-            </h2>
-            <p className="mt-8 text-muted-foreground text-lg leading-relaxed max-w-xl">
-              Most overnight vendors ask you to trust them. Titan Solutions shows you. Our centralized
-              CRM gives hotel management live access to every shift, with tasks, verifications, and
-              photos uploaded before your team arrives.
-            </p>
-            <p className="mt-4 text-foreground font-medium">You will never wonder what happened overnight. You will know.</p>
+        <div className="reveal max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="gold-rule" />
+            <span className="eyebrow">The Titan System</span>
+            <span className="gold-rule" />
           </div>
-          <div className="lg:col-span-6 reveal">
-            <PortalEmbed />
-          </div>
+          <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
+            Your overnight operation.<br />
+            <span className="italic text-gold">Completely visible.</span><br />
+            Every single night.
+          </h2>
+          <p className="mt-8 text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+            Most overnight vendors ask you to trust them. Titan Solutions shows you. Our centralized
+            CRM gives hotel management live access to every shift, with tasks, verifications, and
+            photos uploaded before your team arrives.
+          </p>
+          <p className="mt-4 text-foreground font-medium">You will never wonder what happened overnight. You will know.</p>
         </div>
 
         <div className="mt-24 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -571,6 +590,7 @@ function Index() {
         <WhoWeAre />
         <Services />
         <TitanSystem />
+        <PortalShowcase />
         <Leadership />
         <Partners />
         <FinalCTA />
