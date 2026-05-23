@@ -233,7 +233,6 @@ function WhoWeAre() {
           </div>
         </div>
 
-        </div>
 
 
         <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
