@@ -268,16 +268,18 @@ function Services() {
       <div className="glow-orb-soft -z-10 w-[700px] h-[700px] -left-60 top-1/3" />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-40 bottom-0" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="reveal max-w-4xl">
-          <div className="flex items-center gap-4 mb-8">
+        <div className="reveal max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
             <span className="gold-rule" />
             <span className="eyebrow">What We Do</span>
+            <span className="gold-rule" />
           </div>
           <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
             Everything your property <span className="italic text-gold">needs overnight.</span><br />
             Nothing it doesn't.
           </h2>
         </div>
+
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((s) => (
