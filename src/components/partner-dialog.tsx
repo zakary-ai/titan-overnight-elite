@@ -83,19 +83,24 @@ export function PartnerDialog() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-lg bg-card border-border">
+      <DialogContent className="max-w-lg border-gold/30 bg-gradient-to-b from-card via-card to-ink shadow-[0_30px_80px_-20px_rgba(201,168,76,0.35)] overflow-hidden p-0">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
+        <div className="absolute -top-32 -right-32 w-72 h-72 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-32 -left-32 w-72 h-72 rounded-full bg-gold/5 blur-3xl pointer-events-none" />
+        <div className="relative p-6 sm:p-8">
         <DialogHeader>
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex items-center gap-3 mb-3">
             <span className="gold-rule" />
             <span className="eyebrow">Become a Partner</span>
           </div>
-          <DialogTitle className="font-serif text-3xl text-foreground">
-            Begin the conversation.
+          <DialogTitle className="font-serif text-3xl sm:text-4xl text-foreground leading-tight">
+            Begin the <span className="italic gold-shimmer">conversation.</span>
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
             Tell us about your property. Someone will reach out to you within 24 hours.
           </DialogDescription>
         </DialogHeader>
+
 
         {sent ? (
           <div className="py-8 text-center">
