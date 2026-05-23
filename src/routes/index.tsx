@@ -94,29 +94,31 @@ function Hero() {
       <div className="absolute inset-0 hero-overlay" />
       <div className="absolute inset-0 diagonal-texture" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col justify-center pt-32 pb-24 md:pt-28 md:pb-28">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col items-center text-center justify-center pt-32 pb-24 md:pt-28 md:pb-28">
         <div className="flex items-center gap-4 mb-8">
           <span className="gold-rule" />
           <span className="eyebrow">New York City's Overnight Operations Partner</span>
+          <span className="gold-rule" />
         </div>
 
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] max-w-5xl">
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] max-w-5xl mx-auto">
           Your property.<br />
           <span className="italic text-gold">Pristine every morning.</span><br />
           Without question.
         </h1>
 
-        <p className="mt-8 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
+        <p className="mt-8 max-w-xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
           Full overnight operations for luxury hospitality properties. Documented, supervised, and
           delivered before your first guest arrives.
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           <button onClick={openPartnerDialog} className="btn-gold">Become a Partner →</button>
           <a href="#system" className="btn-ghost-gold">View The Titan System</a>
         </div>
 
       </div>
+
     </section>
   );
 }
