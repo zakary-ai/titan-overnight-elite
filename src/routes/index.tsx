@@ -153,46 +153,32 @@ function CertMarquee() {
 
 
 
-function StatItem({ value, suffix, label, trigger }: { value: number; suffix?: string; label: string; trigger: boolean }) {
-  const n = useCountUp(value, trigger);
+function StatItem({ display, label }: { display: string; label: string }) {
   return (
     <div className="group flex-1 text-center px-4 py-10 transition-colors hover:bg-gold/[0.03]">
-      <div className="font-serif text-5xl md:text-6xl text-gold">
-        {n}{suffix}
-      </div>
+      <div className="font-serif text-5xl md:text-6xl text-gold">{display}</div>
       <div className="mt-3 text-[0.65rem] tracking-elite text-muted-foreground">{label}</div>
     </div>
   );
 }
 
 function StatBand() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [trig, setTrig] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (e) => { if (e[0].isIntersecting) { setTrig(true); io.disconnect(); } },
-      { threshold: 0.3 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
   return (
-    <section ref={ref} className="relative border-y border-border bg-black overflow-hidden">
+    <section className="relative border-y border-border bg-black overflow-hidden">
       <div className="glow-orb -z-10 w-[700px] h-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 7s ease-in-out infinite" }} />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -left-32 -top-32" />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-32 -bottom-32" />
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-border">
-          <StatItem value={365} label="Nights / Year" trigger={trig} />
-          <StatItem value={5} suffix="+" label="Years Active" trigger={trig} />
-          <StatItem value={5} suffix="★" label="Luxury Properties" trigger={trig} />
+          <StatItem display="365" label="Nights / Year" />
+          <StatItem display="5+" label="Years Active" />
+          <StatItem display="5★" label="Luxury Properties" />
         </div>
       </div>
     </section>
   );
 }
+
 
 const WHO_CARDS = [
   { n: "01", t: "Communication First", d: "Open, consistent dialogue with hotel management so nothing goes unaddressed and no standard goes unmet." },
