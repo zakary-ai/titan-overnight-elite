@@ -136,7 +136,9 @@ export function PartnerDialog() {
             </button>
           </form>
         )}
+        </div>
       </DialogContent>
+
     </Dialog>
   );
 }
