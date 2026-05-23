@@ -297,23 +297,14 @@ function PortalEmbed() {
       </div>
 
       <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-border bg-background">
-        {/* TODO: replace src with the real portal embed URL */}
         <iframe
           title="Titan Portal"
-          src="about:blank"
+          src="https://titan-cleaning-solutions.lovable.app/demo"
           className="absolute inset-0 w-full h-full"
           loading="lazy"
           referrerPolicy="no-referrer"
           sandbox="allow-scripts allow-same-origin allow-forms"
         />
-        <div className="absolute inset-0 grid place-items-center pointer-events-none text-center px-6">
-          <div>
-            <div className="text-[0.6rem] tracking-elite text-gold mb-2">Portal Embed</div>
-            <p className="font-serif text-xl text-muted-foreground">
-              Live portal will appear here.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
