@@ -581,7 +581,7 @@ function Footer() {
 
 function Index() {
   return (
-    <div className="text-foreground text-foreground min-h-screen">
+    <div className="text-foreground min-h-screen">
       <Nav />
       <main>
         <Hero />
