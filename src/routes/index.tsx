@@ -35,23 +35,8 @@ const NAV = [
   { id: "contact", label: "Contact" },
 ];
 
-function useCountUp(target: number, trigger: boolean, duration = 1600) {
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!trigger) return;
-    const start = performance.now();
-    let raf = 0;
-    const step = (t: number) => {
-      const p = Math.min(1, (t - start) / duration);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setVal(Math.round(target * eased));
-      if (p < 1) raf = requestAnimationFrame(step);
-    };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [target, trigger, duration]);
-  return val;
-}
+
+
 
 function Logo({ className = "" }: { className?: string }) {
   return (
