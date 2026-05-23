@@ -590,6 +590,7 @@ function Index() {
         <WhoWeAre />
         <Services />
         <TitanSystem />
+        <PortalShowcase />
         <Leadership />
         <Partners />
         <FinalCTA />
