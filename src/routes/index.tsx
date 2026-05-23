@@ -484,16 +484,18 @@ function Partners() {
       <div className="grid-overlay -z-10" />
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-10" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="reveal max-w-3xl">
-          <div className="flex items-center gap-4 mb-8">
+        <div className="reveal max-w-3xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
             <span className="gold-rule" />
             <span className="eyebrow">Trusted Hospitality Brands</span>
+            <span className="gold-rule" />
           </div>
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.1]">
             Built for the brands<br />
             <span className="italic text-gold">that demand the best.</span>
           </h2>
         </div>
+
 
         <div
           className="reveal mt-14 overflow-hidden relative py-10 border-y border-gold/40 bg-black"
