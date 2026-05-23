@@ -94,7 +94,7 @@ function Hero() {
       <div className="absolute inset-0 hero-overlay" />
       <div className="absolute inset-0 diagonal-texture" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col justify-center pt-32 pb-24 md:pt-28 md:pb-0">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col justify-center pt-32 pb-24 md:pt-28 md:pb-28">
         <div className="flex items-center gap-4 mb-8">
           <span className="gold-rule" />
           <span className="eyebrow">New York City's Overnight Operations Partner</span>
