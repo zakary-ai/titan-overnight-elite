@@ -403,16 +403,17 @@ function Leadership() {
     <section id="leadership" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
       <div className="glow-orb-soft -z-10 w-[650px] h-[650px] -right-48 -top-32" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="reveal mb-16">
-          <div className="flex items-center gap-4 mb-8">
+        <div className="reveal mb-16 max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
             <span className="gold-rule" />
             <span className="eyebrow">Owner Involvement</span>
+            <span className="gold-rule" />
           </div>
-          <h2 className="font-serif text-5xl md:text-6xl leading-[1.05] max-w-4xl">
+          <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
             Leadership is present<br />
             <span className="italic text-gold">at every property.</span>
           </h2>
-          <div className="mt-8 max-w-3xl space-y-5 text-muted-foreground text-lg leading-relaxed">
+          <div className="mt-8 max-w-3xl mx-auto space-y-5 text-muted-foreground text-lg leading-relaxed">
             <p>
               At Titan Solutions, leadership is not a title on a contract. Our founder is actively involved in the
               oversight of every property partnership we maintain, present during onboarding, weekly site reviews,
@@ -420,6 +421,7 @@ function Leadership() {
             </p>
           </div>
         </div>
+
 
         <div className="reveal grid lg:grid-cols-12 gap-10 card-elite rounded-2xl p-8 md:p-12">
           <div className="lg:col-span-4">
