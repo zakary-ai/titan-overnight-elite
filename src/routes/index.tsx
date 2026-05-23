@@ -208,25 +208,26 @@ function WhoWeAre() {
       <div className="glow-orb -z-10 w-[520px] h-[520px] -right-32 top-10 opacity-70" />
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-0" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto text-center">
 
           <div className="reveal">
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-4 mb-8">
               <span className="gold-rule" />
               <span className="eyebrow">Who We Are</span>
+              <span className="gold-rule" />
             </div>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
               We don't have clients.<br />
               <span className="italic gold-shimmer">We have partners.</span>
             </h2>
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-8 flex items-center justify-center gap-3">
               <span className="h-px w-16 bg-gold" />
               <span className="text-[0.7rem] tracking-elite uppercase text-gold/80">Est. New York</span>
+              <span className="h-px w-16 bg-gold" />
             </div>
           </div>
-          <div className="reveal relative mt-12">
-            <span className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/60 to-transparent hidden lg:block" />
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed pl-0 lg:pl-4 max-w-3xl">
+          <div className="reveal mt-12">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
               Titan Solutions is a New York based overnight operations company built exclusively for luxury hospitality.
               We manage the full overnight operation across front of house and back of house spaces, arriving in
               uniform every night and ensuring every area meets the standard your guests expect by morning. Every partner has{" "}
@@ -234,6 +235,7 @@ function WhoWeAre() {
             </p>
           </div>
         </div>
+
 
 
 
