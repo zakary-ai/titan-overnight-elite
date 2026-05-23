@@ -346,27 +346,23 @@ function TitanSystem() {
       <div className="grid-overlay -z-10" />
       <div className="glow-orb -z-10 w-[500px] h-[500px] left-1/2 -translate-x-1/2 top-10" style={{ animation: "goldPulse 9s ease-in-out infinite" }} />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-6 reveal">
-            <div className="flex items-center gap-4 mb-8">
-              <span className="gold-rule" />
-              <span className="eyebrow">The Titan System</span>
-            </div>
-            <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
-              Your overnight operation.<br />
-              <span className="italic text-gold">Completely visible.</span><br />
-              Every single night.
-            </h2>
-            <p className="mt-8 text-muted-foreground text-lg leading-relaxed max-w-xl">
-              Most overnight vendors ask you to trust them. Titan Solutions shows you. Our centralized
-              CRM gives hotel management live access to every shift, with tasks, verifications, and
-              photos uploaded before your team arrives.
-            </p>
-            <p className="mt-4 text-foreground font-medium">You will never wonder what happened overnight. You will know.</p>
+        <div className="reveal max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="gold-rule" />
+            <span className="eyebrow">The Titan System</span>
+            <span className="gold-rule" />
           </div>
-          <div className="lg:col-span-6 reveal">
-            <PortalEmbed />
-          </div>
+          <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
+            Your overnight operation.<br />
+            <span className="italic text-gold">Completely visible.</span><br />
+            Every single night.
+          </h2>
+          <p className="mt-8 text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+            Most overnight vendors ask you to trust them. Titan Solutions shows you. Our centralized
+            CRM gives hotel management live access to every shift, with tasks, verifications, and
+            photos uploaded before your team arrives.
+          </p>
+          <p className="mt-4 text-foreground font-medium">You will never wonder what happened overnight. You will know.</p>
         </div>
 
         <div className="mt-24 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
