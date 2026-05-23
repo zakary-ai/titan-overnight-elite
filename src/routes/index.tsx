@@ -52,7 +52,7 @@ function Logo({ className = "" }: { className?: string }) {
 
 function Nav() {
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-black border-b border-gold/60 shadow-[0_1px_0_0_rgba(201,168,76,0.25)]">
+    <header className="fixed top-0 inset-x-0 z-50 bg-black/70 backdrop-blur-xl border-b border-gold/60 shadow-[0_1px_0_0_rgba(201,168,76,0.25)]">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 h-20 flex items-center justify-between">
         <Logo />
         <button onClick={openPartnerDialog} className="btn-gold text-[0.6rem] sm:text-[0.72rem] px-4 sm:px-7 py-3 sm:py-4">
@@ -111,7 +111,7 @@ function Hero() {
 function CertMarquee() {
   const items = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"];
   return (
-    <section className="relative bg-black border-t border-b-0 border-gold/60">
+    <section className="relative bg-transparent border-t border-b-0 border-gold/60">
       <div
         className="overflow-hidden relative py-5"
         style={{
@@ -149,7 +149,7 @@ function StatItem({ display, label }: { display: string; label: string }) {
 
 function StatBand() {
   return (
-    <section className="relative border-y border-border bg-black overflow-hidden">
+    <section className="relative border-y border-border bg-transparent overflow-hidden">
       <div className="glow-orb -z-10 w-[700px] h-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 7s ease-in-out infinite" }} />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -left-32 -top-32" />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-32 -bottom-32" />
@@ -479,7 +479,7 @@ function Partners() {
 
 
         <div
-          className="reveal mt-14 overflow-hidden relative py-10 border-y border-gold/40 bg-black"
+          className="reveal mt-14 overflow-hidden relative py-10 border-y border-gold/40 bg-black/40"
           style={{
             maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
             WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
@@ -527,7 +527,7 @@ function Partners() {
 
 function FinalCTA() {
   return (
-    <section id="contact" className="relative py-24 lg:py-32 border-t border-border overflow-hidden bg-black">
+    <section id="contact" className="relative py-24 lg:py-32 border-t border-border overflow-hidden bg-transparent">
       <div className="glow-orb -z-10 w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 8s ease-in-out infinite" }} />
       <div className="grid-overlay -z-10" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
@@ -581,7 +581,7 @@ function Footer() {
 
 function Index() {
   return (
-    <div className="bg-background text-foreground min-h-screen">
+    <div className="text-foreground min-h-screen">
       <Nav />
       <main>
         <Hero />
