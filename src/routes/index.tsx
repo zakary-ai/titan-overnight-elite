@@ -208,25 +208,26 @@ function WhoWeAre() {
       <div className="glow-orb -z-10 w-[520px] h-[520px] -right-32 top-10 opacity-70" />
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-0" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto text-center">
 
           <div className="reveal">
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-4 mb-8">
               <span className="gold-rule" />
               <span className="eyebrow">Who We Are</span>
+              <span className="gold-rule" />
             </div>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
               We don't have clients.<br />
               <span className="italic gold-shimmer">We have partners.</span>
             </h2>
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-8 flex items-center justify-center gap-3">
               <span className="h-px w-16 bg-gold" />
               <span className="text-[0.7rem] tracking-elite uppercase text-gold/80">Est. New York</span>
+              <span className="h-px w-16 bg-gold" />
             </div>
           </div>
-          <div className="reveal relative mt-12">
-            <span className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/60 to-transparent hidden lg:block" />
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed pl-0 lg:pl-4 max-w-3xl">
+          <div className="reveal mt-12">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
               Titan Solutions is a New York based overnight operations company built exclusively for luxury hospitality.
               We manage the full overnight operation across front of house and back of house spaces, arriving in
               uniform every night and ensuring every area meets the standard your guests expect by morning. Every partner has{" "}
@@ -234,6 +235,7 @@ function WhoWeAre() {
             </p>
           </div>
         </div>
+
 
 
 
@@ -266,16 +268,18 @@ function Services() {
       <div className="glow-orb-soft -z-10 w-[700px] h-[700px] -left-60 top-1/3" />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-40 bottom-0" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="reveal max-w-4xl">
-          <div className="flex items-center gap-4 mb-8">
+        <div className="reveal max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
             <span className="gold-rule" />
             <span className="eyebrow">What We Do</span>
+            <span className="gold-rule" />
           </div>
           <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
             Everything your property <span className="italic text-gold">needs overnight.</span><br />
             Nothing it doesn't.
           </h2>
         </div>
+
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((s) => (
@@ -399,16 +403,17 @@ function Leadership() {
     <section id="leadership" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
       <div className="glow-orb-soft -z-10 w-[650px] h-[650px] -right-48 -top-32" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="reveal mb-16">
-          <div className="flex items-center gap-4 mb-8">
+        <div className="reveal mb-16 max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
             <span className="gold-rule" />
             <span className="eyebrow">Owner Involvement</span>
+            <span className="gold-rule" />
           </div>
-          <h2 className="font-serif text-5xl md:text-6xl leading-[1.05] max-w-4xl">
+          <h2 className="font-serif text-5xl md:text-6xl leading-[1.05]">
             Leadership is present<br />
             <span className="italic text-gold">at every property.</span>
           </h2>
-          <div className="mt-8 max-w-3xl space-y-5 text-muted-foreground text-lg leading-relaxed">
+          <div className="mt-8 max-w-3xl mx-auto space-y-5 text-muted-foreground text-lg leading-relaxed">
             <p>
               At Titan Solutions, leadership is not a title on a contract. Our founder is actively involved in the
               oversight of every property partnership we maintain, present during onboarding, weekly site reviews,
@@ -416,6 +421,7 @@ function Leadership() {
             </p>
           </div>
         </div>
+
 
         <div className="reveal grid lg:grid-cols-12 gap-10 card-elite rounded-2xl p-8 md:p-12">
           <div className="lg:col-span-4">
@@ -478,16 +484,18 @@ function Partners() {
       <div className="grid-overlay -z-10" />
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-10" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="reveal max-w-3xl">
-          <div className="flex items-center gap-4 mb-8">
+        <div className="reveal max-w-3xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
             <span className="gold-rule" />
             <span className="eyebrow">Trusted Hospitality Brands</span>
+            <span className="gold-rule" />
           </div>
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.1]">
             Built for the brands<br />
             <span className="italic text-gold">that demand the best.</span>
           </h2>
         </div>
+
 
         <div
           className="reveal mt-14 overflow-hidden relative py-10 border-y border-gold/40 bg-black"
