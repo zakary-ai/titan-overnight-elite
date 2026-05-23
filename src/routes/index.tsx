@@ -206,8 +206,8 @@ function WhoWeAre() {
       <div className="glow-orb -z-10 w-[520px] h-[520px] -right-32 top-10 opacity-70" />
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-0" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
         <div className="max-w-4xl">
+
           <div className="reveal">
             <div className="flex items-center gap-4 mb-8">
               <span className="gold-rule" />
