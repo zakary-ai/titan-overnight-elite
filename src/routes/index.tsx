@@ -65,7 +65,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="home" className="relative w-full overflow-hidden border-b border-gold/60 min-h-[88vh] md:min-h-[640px]">
+    <section id="home" className="relative w-full overflow-hidden border-b border-gold/60 min-h-[88vh] md:min-h-[720px]">
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
@@ -79,27 +79,34 @@ function Hero() {
       <div className="absolute inset-0 hero-overlay" />
       <div className="absolute inset-0 diagonal-texture" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col items-center text-center justify-center pt-32 pb-24 md:pt-28 md:pb-28">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col items-center text-center justify-center pt-32 pb-20 md:py-24 lg:py-32">
         <div className="flex items-center gap-4 mb-8">
           <span className="gold-rule" />
           <span className="eyebrow">New York's Premier Overnight Operations Partner</span>
           <span className="gold-rule" />
         </div>
 
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] max-w-5xl mx-auto">
-          Your property.<br />
-          <span className="italic text-gold">Pristine every morning.</span><br />
-          Without question.
+        <h1 className="font-black tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] max-w-5xl mx-auto uppercase">
+          Wake Up To A<br className="sm:hidden" />{" "}
+          <span className="text-gold">Flawless Hotel.</span><br />
+          Every Single Morning.
         </h1>
 
-        <p className="mt-8 max-w-xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed">
-          Full overnight operations for luxury hospitality properties. Documented, supervised, and
-          delivered before your first guest arrives.
+
+        <p className="mt-6 md:mt-8 max-w-2xl mx-auto text-base md:text-xl font-light text-muted-foreground leading-relaxed">
+          For NYC luxury hotel owners who refuse to gamble their mornings on chance —
+          we run your overnight floor while you sleep.
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <button onClick={openPartnerDialog} className="btn-gold">Become a Partner →</button>
-          <a href="#system" className="btn-ghost-gold">View The Titan System</a>
+        <div className="mt-10 w-full flex flex-col sm:flex-row sm:flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
+          <button
+            onClick={openPartnerDialog}
+            className="btn-gold w-full sm:w-auto !text-white !bg-gold hover:!bg-gold-soft text-sm sm:text-[0.78rem] py-4 sm:py-5 px-8 sm:px-10 shadow-[0_20px_50px_-15px_rgba(213,175,76,0.55)]"
+            style={{ color: "#ffffff" }}
+          >
+            Become a Partner →
+          </button>
+          <a href="#system" className="btn-ghost-gold w-full sm:w-auto">View The Titan System</a>
         </div>
 
       </div>
@@ -107,6 +114,7 @@ function Hero() {
     </section>
   );
 }
+
 
 function CertMarquee() {
   const items = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"];
