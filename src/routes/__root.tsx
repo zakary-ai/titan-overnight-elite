@@ -105,6 +105,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "Titan Solutions",
+              url: "https://titansolutionsco.com/",
+              logo: "https://titansolutionsco.com/favicon.ico",
+            },
+            {
+              "@type": "WebSite",
+              name: "Titan Solutions",
+              url: "https://titansolutionsco.com/",
+              description:
+                "NYC overnight operations partner for luxury hotels — pristine mornings, every day.",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
