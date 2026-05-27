@@ -82,7 +82,7 @@ function Hero() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 h-full flex flex-col items-center text-center justify-center pt-32 pb-24 md:pt-28 md:pb-28">
         <div className="flex items-center gap-4 mb-8">
           <span className="gold-rule" />
-          <span className="eyebrow">New York City's Overnight Operations Partner</span>
+          <span className="eyebrow">New York's Premier Overnight Operations Partner</span>
           <span className="gold-rule" />
         </div>
 
@@ -167,7 +167,7 @@ function StatBand() {
 
 const WHO_CARDS = [
   { n: "01", t: "Communication First", d: "Open, consistent dialogue with hotel management so nothing goes unaddressed and no standard goes unmet." },
-  { n: "02", t: "Transparency Always", d: "Live access to nightly operations through our CRM. Every task, every area, every issue, documented in real time." },
+  { n: "02", t: "Transparency Always", d: "Live access to nightly operations through our mobile app. Every task, every area, every issue, documented in real time." },
   { n: "03", t: "Standards Without Compromise", d: "Full uniform every night. The discipline in how we arrive reflects the discipline we bring to every inch of your property." },
   { n: "04", t: "Long Term Partnership", d: "We're not here for a contract. We're here to become an extension of your team, year after year." },
 ];
@@ -184,7 +184,7 @@ function WhoWeAre() {
           <div className="reveal">
             <div className="flex items-center justify-center gap-4 mb-8">
               <span className="gold-rule" />
-              <span className="eyebrow">Who We Are</span>
+              <span className="eyebrow">Our Promise</span>
               <span className="gold-rule" />
             </div>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
