@@ -75,7 +75,7 @@ export function PartnerDialog() {
       "",
       parsed.data.message || "",
     ].join("\n");
-    window.location.href = `mailto:frank@titansolutionsco.com?subject=${encodeURIComponent(
+    window.location.href = `mailto:office@titansolutionsco.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
     setSent(true);
