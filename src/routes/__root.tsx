@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Titan Solutions" },
+      { name: "description", content: "Titan Solutions offers premium overnight operations for luxury hotels, ensuring pristine mornings." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Titan Solutions" },
+      { property: "og:description", content: "Titan Solutions offers premium overnight operations for luxury hotels, ensuring pristine mornings." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Titan Solutions" },
+      { name: "twitter:description", content: "Titan Solutions offers premium overnight operations for luxury hotels, ensuring pristine mornings." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0a142c6f-90e1-4223-b54b-38c9620b3867/id-preview-a8ce4dd7--560278fa-529d-4a91-9bf4-be3a2c853394.lovable.app-1779889234256.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0a142c6f-90e1-4223-b54b-38c9620b3867/id-preview-a8ce4dd7--560278fa-529d-4a91-9bf4-be3a2c853394.lovable.app-1779889234256.png" },
     ],
     links: [
       {
