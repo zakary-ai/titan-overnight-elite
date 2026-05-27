@@ -395,7 +395,7 @@ function TitanSystem() {
 
 function Leadership() {
   return (
-    <section id="leadership" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
+    <section id="leadership" className="relative py-24 lg:py-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="reveal mb-16 max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-4 mb-8">
