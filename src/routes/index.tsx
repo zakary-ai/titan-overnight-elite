@@ -587,7 +587,9 @@ function Index() {
         <Services />
         <TitanSystem />
         <PortalShowcase />
+        <Leadership />
         <Partners />
+
         <FinalCTA />
       </main>
       <Footer />
