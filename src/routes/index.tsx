@@ -120,7 +120,6 @@ function CertMarquee() {
   const items = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"];
   return (
     <section className="section-depth-soft relative bg-transparent">
-      <div className="section-divider" />
       <div
         className="overflow-hidden relative py-5"
         style={{
@@ -140,7 +139,6 @@ function CertMarquee() {
           ))}
         </div>
       </div>
-      <div className="section-divider" />
     </section>
   );
 }
@@ -158,7 +156,7 @@ function StatItem({ display, label }: { display: string; label: string }) {
 
 function StatBand() {
   return (
-    <section className="section-depth-soft relative border-y border-border bg-transparent overflow-hidden">
+    <section className="section-depth-soft relative bg-transparent overflow-hidden">
       <div className="glow-orb -z-10 w-[700px] h-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 7s ease-in-out infinite" }} />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -left-32 -top-32" />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-32 -bottom-32" />
@@ -536,7 +534,7 @@ function Partners() {
 
 function FinalCTA() {
   return (
-    <section id="contact" className="section-depth relative py-24 lg:py-32 border-t border-border overflow-hidden bg-transparent">
+    <section id="contact" className="section-depth relative py-24 lg:py-32 overflow-hidden bg-transparent">
       <div className="glow-orb -z-10 w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 8s ease-in-out infinite" }} />
       <div className="grid-overlay -z-10" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
@@ -596,17 +594,11 @@ function Index() {
         <Hero />
         <CertMarquee />
         <StatBand />
-        <div className="section-divider" />
         <WhoWeAre />
-        <div className="section-divider" />
         <Services />
-        <div className="section-divider" />
         <TitanSystem />
-        <div className="section-divider" />
         <PortalShowcase />
-        <div className="section-divider" />
         <Partners />
-        <div className="section-divider" />
         <FinalCTA />
       </main>
       <Footer />
