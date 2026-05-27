@@ -119,7 +119,8 @@ function Hero() {
 function CertMarquee() {
   const items = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"];
   return (
-    <section className="relative bg-transparent border-t border-b-0 border-gold/60">
+    <section className="section-depth-soft relative bg-transparent">
+      <div className="section-divider" />
       <div
         className="overflow-hidden relative py-5"
         style={{
@@ -139,7 +140,7 @@ function CertMarquee() {
           ))}
         </div>
       </div>
-      <div className="h-px bg-gold/60" />
+      <div className="section-divider" />
     </section>
   );
 }
@@ -157,7 +158,7 @@ function StatItem({ display, label }: { display: string; label: string }) {
 
 function StatBand() {
   return (
-    <section className="relative border-y border-border bg-transparent overflow-hidden">
+    <section className="section-depth-soft relative border-y border-border bg-transparent overflow-hidden">
       <div className="glow-orb -z-10 w-[700px] h-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 7s ease-in-out infinite" }} />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -left-32 -top-32" />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-32 -bottom-32" />
@@ -182,7 +183,7 @@ const WHO_CARDS = [
 
 function WhoWeAre() {
   return (
-    <section id="who" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="who" className="section-depth relative py-24 lg:py-32 overflow-hidden">
       <div className="grid-overlay -z-10" />
       <div className="glow-orb -z-10 w-[520px] h-[520px] -right-32 top-10 opacity-70" />
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-0" />
@@ -243,7 +244,7 @@ const SERVICES = [
 
 function Services() {
   return (
-    <section id="services" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
+    <section id="services" className="section-depth relative py-24 lg:py-32 bg-transparent overflow-hidden">
       <div className="glow-orb-soft -z-10 w-[700px] h-[700px] -left-60 top-1/3" />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-40 bottom-0" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -316,7 +317,7 @@ function IPhonePortal() {
 
 function PortalShowcase() {
   return (
-    <section id="portal" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
+    <section id="portal" className="section-depth relative py-24 lg:py-32 bg-transparent overflow-hidden">
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-10" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="reveal mb-16 max-w-4xl mx-auto text-center">
@@ -350,7 +351,7 @@ const SYSTEM_BENEFITS = [
 
 function TitanSystem() {
   return (
-    <section id="system" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="system" className="section-depth relative py-24 lg:py-32 overflow-hidden">
       <div className="grid-overlay -z-10" />
       <div className="glow-orb -z-10 w-[500px] h-[500px] left-1/2 -translate-x-1/2 top-10" style={{ animation: "goldPulse 9s ease-in-out infinite" }} />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -469,7 +470,7 @@ function Leadership() {
 
 function Partners() {
   return (
-    <section id="partners" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="partners" className="section-depth relative py-24 lg:py-32 overflow-hidden">
       <div className="grid-overlay -z-10" />
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-10" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -535,7 +536,7 @@ function Partners() {
 
 function FinalCTA() {
   return (
-    <section id="contact" className="relative py-24 lg:py-32 border-t border-border overflow-hidden bg-transparent">
+    <section id="contact" className="section-depth relative py-24 lg:py-32 border-t border-border overflow-hidden bg-transparent">
       <div className="glow-orb -z-10 w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 8s ease-in-out infinite" }} />
       <div className="grid-overlay -z-10" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
@@ -595,12 +596,17 @@ function Index() {
         <Hero />
         <CertMarquee />
         <StatBand />
+        <div className="section-divider" />
         <WhoWeAre />
+        <div className="section-divider" />
         <Services />
+        <div className="section-divider" />
         <TitanSystem />
+        <div className="section-divider" />
         <PortalShowcase />
-        
+        <div className="section-divider" />
         <Partners />
+        <div className="section-divider" />
         <FinalCTA />
       </main>
       <Footer />

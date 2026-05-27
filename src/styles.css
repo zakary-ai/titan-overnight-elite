@@ -91,7 +91,7 @@
     font-feature-settings: "ss01", "cv11";
     position: relative;
   }
-  /* Atmospheric obsidian base — soft radial tonal wash */
+  /* Warm radial atmosphere — aged leather/velvet feel */
   body::before {
     content: "";
     position: fixed;
@@ -99,23 +99,25 @@
     z-index: -2;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.06) 0%, rgba(0,0,0,0) 55%),
-      radial-gradient(ellipse 70% 55% at 50% 100%, rgba(201,168,76,0.045) 0%, rgba(0,0,0,0) 60%),
-      radial-gradient(circle at 50% 40%, #131313 0%, #0a0a0a 45%, #050505 100%);
+      radial-gradient(ellipse 75% 55% at 50% 0%, rgba(213,175,76,0.07) 0%, rgba(0,0,0,0) 55%),
+      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(213,175,76,0.05) 0%, rgba(0,0,0,0) 60%),
+      radial-gradient(circle at 50% 45%, #141210 0%, #0c0a08 45%, #050505 100%);
   }
-  /* Refined film grain overlay for tactile depth */
+  /* Warm gold-tinted film grain for tactile depth */
   body::after {
     content: "";
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    opacity: 0.035;
+    opacity: 0.04;
     mix-blend-mode: overlay;
+    background-color: rgba(213,175,76,0.08);
     background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
   ::selection { background: var(--gold); color: var(--ink); }
 }
+
 
 @layer utilities {
   .font-serif { font-family: var(--font-serif); }
@@ -255,5 +257,49 @@
     background-clip: text;
     color: transparent;
     animation: shimmer 6s linear infinite;
+  }
+
+  /* Section depth — gentle top-to-bottom fade overlay for layered scroll feel */
+  .section-depth { position: relative; isolation: isolate; }
+  .section-depth::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(26,23,20,0.65) 0%,
+      rgba(15,13,11,0.35) 35%,
+      rgba(5,5,5,0.0) 70%,
+      rgba(5,5,5,0.6) 100%);
+  }
+  .section-depth-soft { position: relative; isolation: isolate; }
+  .section-depth-soft::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(26,23,20,0.35) 0%,
+      rgba(5,5,5,0.0) 60%,
+      rgba(5,5,5,0.3) 100%);
+  }
+
+  /* Gold hairline between sections — soft edges, never harsh */
+  .section-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(213,175,76,0.22) 20%,
+      rgba(213,175,76,0.22) 80%,
+      transparent 100%);
+  }
+
+  /* Gold "catching light" — subtle glow for accent text */
+  .gold-lit {
+    color: var(--gold);
+    text-shadow: 0 0 24px rgba(213,175,76,0.18), 0 0 2px rgba(213,175,76,0.12);
   }
 }
