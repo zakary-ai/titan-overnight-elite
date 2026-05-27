@@ -158,7 +158,7 @@ function StatItem({ display, label }: { display: string; label: string }) {
 
 function StatBand() {
   return (
-    <section className="relative border-y border-border bg-transparent overflow-hidden">
+    <section className="section-depth-soft relative border-y border-border bg-transparent overflow-hidden">
       <div className="glow-orb -z-10 w-[700px] h-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 7s ease-in-out infinite" }} />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -left-32 -top-32" />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-32 -bottom-32" />
