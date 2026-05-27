@@ -30,7 +30,7 @@ const NAV = [
   { id: "who", label: "Who We Are" },
   { id: "services", label: "Services" },
   { id: "system", label: "Titan System" },
-  { id: "leadership", label: "Leadership" },
+  
   { id: "partners", label: "Partners" },
   { id: "contact", label: "Contact" },
 ];
@@ -591,7 +591,7 @@ function Index() {
         <Services />
         <TitanSystem />
         <PortalShowcase />
-        <Leadership />
+        
         <Partners />
         <FinalCTA />
       </main>
