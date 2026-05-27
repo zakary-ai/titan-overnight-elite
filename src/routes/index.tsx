@@ -596,12 +596,17 @@ function Index() {
         <Hero />
         <CertMarquee />
         <StatBand />
+        <div className="section-divider" />
         <WhoWeAre />
+        <div className="section-divider" />
         <Services />
+        <div className="section-divider" />
         <TitanSystem />
+        <div className="section-divider" />
         <PortalShowcase />
-        
+        <div className="section-divider" />
         <Partners />
+        <div className="section-divider" />
         <FinalCTA />
       </main>
       <Footer />
