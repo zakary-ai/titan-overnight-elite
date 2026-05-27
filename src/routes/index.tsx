@@ -438,8 +438,8 @@ function Leadership() {
           <div className="mt-10 pt-8 border-t border-border grid sm:grid-cols-3 gap-6 text-sm">
             <div>
               <div className="text-[0.6rem] tracking-elite text-gold mb-1">Email</div>
-              <a href="mailto:frank@titansolutionsco.com" className="hover:text-gold transition-colors">
-                frank@titansolutionsco.com
+              <a href="mailto:office@titansolutionsco.com" className="hover:text-gold transition-colors">
+                office@titansolutionsco.com
               </a>
             </div>
             <div>
@@ -561,7 +561,7 @@ function Footer() {
           Overnight operations for luxury hospitality. Owner operated. New York City.
         </div>
         <div className="text-sm md:text-right space-y-1 text-muted-foreground">
-          <div>frank@titansolutionsco.com</div>
+          <div>office@titansolutionsco.com</div>
           <div>347.408.8559</div>
           <div>New York, NY</div>
         </div>
