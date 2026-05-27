@@ -470,7 +470,7 @@ function Leadership() {
 
 function Partners() {
   return (
-    <section id="partners" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="partners" className="section-depth relative py-24 lg:py-32 overflow-hidden">
       <div className="grid-overlay -z-10" />
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-10" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
