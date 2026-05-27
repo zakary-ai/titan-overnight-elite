@@ -94,8 +94,9 @@ function Hero() {
 
 
         <p className="mt-6 md:mt-8 max-w-2xl mx-auto text-base md:text-xl font-light text-muted-foreground leading-relaxed">
-          For NYC luxury hotel owners who refuse to gamble their mornings on chance —
-          we run your overnight floor while you sleep.
+          For NYC luxury hotels that don’t get second chances in the morning.&nbsp;
+          <br />
+          No missed floors. No morning panic. No excuses.
         </p>
 
         <div className="mt-10 w-full flex flex-col sm:flex-row sm:flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
