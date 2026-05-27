@@ -634,11 +634,11 @@ function Index() {
         <CredentialBand />
         <WhoWeAre />
         <Services />
+        <Certifications />
         <TitanSystem />
         <PortalShowcase />
         <Leadership />
         <Partners />
-        <Certifications />
 
         <FinalCTA />
       </main>
