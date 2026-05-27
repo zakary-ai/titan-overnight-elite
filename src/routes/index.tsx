@@ -417,56 +417,42 @@ function Leadership() {
         </div>
 
 
-        <div className="reveal grid lg:grid-cols-12 gap-10 card-elite rounded-2xl p-8 md:p-12">
-          <div className="lg:col-span-4">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
-              <img
-                src={founderImg}
-                alt="Frank Boccia, Founder and President of Titan Solutions"
-                className="w-full h-full object-cover grayscale-[20%]"
-                loading="lazy"
-                width={1024}
-                height={1280}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-            </div>
+        <div className="reveal card-elite rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
+          <h3 className="font-serif text-4xl text-gold italic">Frank Boccia</h3>
+          <div className="mt-2 text-[0.7rem] tracking-elite text-muted-foreground">
+            Founder and President, Titan Solutions
           </div>
-          <div className="lg:col-span-8">
-            <h3 className="font-serif text-4xl text-gold italic">Frank Boccia</h3>
-            <div className="mt-2 text-[0.7rem] tracking-elite text-muted-foreground">
-              Founder and President, Titan Solutions
+          <ul className="mt-8 space-y-4">
+            {[
+              "Structured weekly property reviews conducted alongside hotel management",
+              "Direct leadership access, 24 hours a day, 365 days a year",
+              "Immediate response to any concern at any partner property",
+              "Personal accountability on every contract, without exception",
+            ].map((b) => (
+              <li key={b} className="flex gap-3 text-muted-foreground">
+                <span className="mt-2 w-1.5 h-1.5 bg-gold rounded-full shrink-0" />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10 pt-8 border-t border-border grid sm:grid-cols-3 gap-6 text-sm">
+            <div>
+              <div className="text-[0.6rem] tracking-elite text-gold mb-1">Email</div>
+              <a href="mailto:frank@titansolutionsco.com" className="hover:text-gold transition-colors">
+                frank@titansolutionsco.com
+              </a>
             </div>
-            <ul className="mt-8 space-y-4">
-              {[
-                "Structured weekly property reviews conducted alongside hotel management",
-                "Direct leadership access, 24 hours a day, 365 days a year",
-                "Immediate response to any concern at any partner property",
-                "Personal accountability on every contract, without exception",
-              ].map((b) => (
-                <li key={b} className="flex gap-3 text-muted-foreground">
-                  <span className="mt-2 w-1.5 h-1.5 bg-gold rounded-full shrink-0" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-10 pt-8 border-t border-border grid sm:grid-cols-3 gap-6 text-sm">
-              <div>
-                <div className="text-[0.6rem] tracking-elite text-gold mb-1">Email</div>
-                <a href="mailto:frank@titansolutionsco.com" className="hover:text-gold transition-colors">
-                  frank@titansolutionsco.com
-                </a>
-              </div>
-              <div>
-                <div className="text-[0.6rem] tracking-elite text-gold mb-1">Direct</div>
-                <a href="tel:3474088559" className="hover:text-gold transition-colors">347.408.8559</a>
-              </div>
-              <div>
-                <div className="text-[0.6rem] tracking-elite text-gold mb-1">Based</div>
-                New York, NY, around the clock
-              </div>
+            <div>
+              <div className="text-[0.6rem] tracking-elite text-gold mb-1">Direct</div>
+              <a href="tel:3474088559" className="hover:text-gold transition-colors">347.408.8559</a>
+            </div>
+            <div>
+              <div className="text-[0.6rem] tracking-elite text-gold mb-1">Based</div>
+              New York, NY, around the clock
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
