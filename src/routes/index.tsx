@@ -351,7 +351,7 @@ const SYSTEM_BENEFITS = [
 
 function TitanSystem() {
   return (
-    <section id="system" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="system" className="section-depth relative py-24 lg:py-32 overflow-hidden">
       <div className="grid-overlay -z-10" />
       <div className="glow-orb -z-10 w-[500px] h-[500px] left-1/2 -translate-x-1/2 top-10" style={{ animation: "goldPulse 9s ease-in-out infinite" }} />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
