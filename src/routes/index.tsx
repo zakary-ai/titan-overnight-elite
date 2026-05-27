@@ -65,7 +65,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="home" className="relative w-full overflow-hidden border-b border-gold/60 min-h-[88vh] md:min-h-[720px]">
+    <section id="home" className="relative w-full overflow-hidden border-b border-gold/60 min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-230px)]">
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
@@ -116,18 +116,23 @@ function Hero() {
 }
 
 
-function CertMarquee() {
+function CredentialBand() {
   const items = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"];
   return (
-    <section className="section-depth-soft relative bg-transparent">
+    <section className="section-depth-soft relative bg-transparent overflow-hidden">
+      <div className="glow-orb -z-10 w-[700px] h-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-60" style={{ animation: "goldPulse 7s ease-in-out infinite" }} />
+      <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -left-32 -top-32" />
+      <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-32 -bottom-32" />
+
+      {/* Marquee row */}
       <div
-        className="overflow-hidden relative py-5"
+        className="overflow-hidden relative py-3"
         style={{
           maskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
           WebkitMaskImage: "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)",
         }}
       >
-        <div className="marquee-track text-[0.7rem] tracking-wide-2 uppercase text-muted-foreground">
+        <div className="marquee-track text-[0.68rem] tracking-wide-2 uppercase text-muted-foreground">
           {[...Array(2)].map((_, dup) => (
             <div key={dup} className="flex items-center shrink-0">
               {items.map((t) => (
@@ -139,37 +144,29 @@ function CertMarquee() {
           ))}
         </div>
       </div>
-    </section>
-  );
-}
 
+      {/* Hairline between rows */}
+      <div className="h-px w-full bg-gold/15" />
 
-
-function StatItem({ display, label }: { display: string; label: string }) {
-  return (
-    <div className="group flex-1 text-center px-4 py-10 transition-colors hover:bg-gold/[0.03]">
-      <div className="font-serif text-5xl md:text-6xl text-gold">{display}</div>
-      <div className="mt-3 text-[0.65rem] tracking-elite text-muted-foreground">{label}</div>
-    </div>
-  );
-}
-
-function StatBand() {
-  return (
-    <section className="section-depth-soft relative bg-transparent overflow-hidden">
-      <div className="glow-orb -z-10 w-[700px] h-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 7s ease-in-out infinite" }} />
-      <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -left-32 -top-32" />
-      <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-32 -bottom-32" />
+      {/* Stats row */}
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-border">
-          <StatItem display="365" label="Nights / Year" />
-          <StatItem display="5+" label="Years Active" />
-          <StatItem display="5★" label="Luxury Properties" />
+        <div className="flex flex-row divide-x divide-border">
+          {[
+            { display: "365", label: "Nights / Year" },
+            { display: "5+", label: "Years Active" },
+            { display: "5★", label: "Luxury Properties" },
+          ].map((s) => (
+            <div key={s.label} className="flex-1 text-center px-4 py-5 transition-colors hover:bg-gold/[0.03]">
+              <div className="font-serif text-3xl md:text-4xl text-gold leading-none">{s.display}</div>
+              <div className="mt-2 text-[0.6rem] md:text-[0.65rem] tracking-elite text-muted-foreground">{s.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
 
 
 const WHO_CARDS = [
@@ -592,8 +589,7 @@ function Index() {
       <Nav />
       <main>
         <Hero />
-        <CertMarquee />
-        <StatBand />
+        <CredentialBand />
         <WhoWeAre />
         <Services />
         <TitanSystem />
