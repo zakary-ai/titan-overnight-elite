@@ -140,7 +140,7 @@ function CertMarquee() {
           ))}
         </div>
       </div>
-      <div className="h-px bg-gold/60" />
+      <div className="section-divider" />
     </section>
   );
 }
