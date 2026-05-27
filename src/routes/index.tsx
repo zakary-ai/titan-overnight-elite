@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import heroPoster from "@/assets/hero-poster.jpg";
+
 import founderImg from "@/assets/founder.jpg";
 import titanLogo from "@/assets/titan-logo.png";
 import { PartnerDialog, openPartnerDialog } from "@/components/partner-dialog";
