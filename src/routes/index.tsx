@@ -8,17 +8,34 @@ import { PartnerDialog, openPartnerDialog } from "@/components/partner-dialog";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Titan Solutions, NYC Overnight Operations for Luxury Hotels" },
+      { title: "Titan Solutions — NYC Luxury Hotel Overnight Operations" },
       {
         name: "description",
         content:
-          "New York's overnight operations partner for luxury hospitality. Full FOH and BOH overnight management, documented, supervised, and delivered before your first guest arrives.",
+          "New York's overnight operations partner for luxury hospitality. Full FOH and BOH management, supervised and delivered before your first guest arrives.",
       },
-      { property: "og:title", content: "Titan Solutions, Overnight Operations for Luxury Hotels" },
+      { property: "og:title", content: "Titan Solutions — NYC Luxury Hotel Overnight Operations" },
       {
         property: "og:description",
         content:
-          "Pristine every morning. Without question. Owner operated overnight operations for NYC luxury hotels.",
+          "New York's overnight operations partner for luxury hospitality. Full FOH and BOH management, supervised and delivered before your first guest arrives.",
+      },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Titan Solutions",
+          url: "https://titansolutionsco.com/",
+          description:
+            "Owner-operated overnight FOH and BOH operations for NYC luxury hotels — cleaning, kitchen support, and floor management delivered before first arrivals.",
+          areaServed: "New York City",
+          address: { "@type": "PostalAddress", addressLocality: "New York", addressRegion: "NY", addressCountry: "US" },
+        }),
       },
     ],
   }),
