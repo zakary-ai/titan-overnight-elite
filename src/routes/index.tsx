@@ -317,7 +317,7 @@ function IPhonePortal() {
 
 function PortalShowcase() {
   return (
-    <section id="portal" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
+    <section id="portal" className="section-depth relative py-24 lg:py-32 bg-transparent overflow-hidden">
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-10" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="reveal mb-16 max-w-4xl mx-auto text-center">
