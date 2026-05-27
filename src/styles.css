@@ -51,10 +51,11 @@
   --popover: oklch(0.175 0 0);
   --popover-foreground: oklch(0.965 0 0);
 
-  /* Single bold accent — amber/gold (#D97706) for elite performance brand */
-  --gold: oklch(0.705 0.165 55);             /* ~#D97706 */
-  --gold-soft: oklch(0.79 0.14 65);          /* lifted highlight */
-  --gold-deep: oklch(0.585 0.155 50);        /* pressed/deep */
+  /* Single bold accent — warm gold (#D5AF4C) for elite performance brand */
+  --gold: oklch(0.755 0.12 85);              /* ~#D5AF4C */
+  --gold-soft: oklch(0.84 0.09 88);          /* lifted highlight */
+  --gold-deep: oklch(0.62 0.12 80);          /* pressed/deep */
+
 
   --primary: var(--foreground);              /* primary text = off-white */
   --primary-foreground: var(--ink);
