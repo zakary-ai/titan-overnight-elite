@@ -119,9 +119,9 @@ export function PartnerDialog() {
             <div className="mx-auto w-12 h-12 border border-gold rotate-45 grid place-items-center mb-4">
               <span className="-rotate-45 text-gold font-serif text-lg">✓</span>
             </div>
-            <p className="font-serif text-2xl text-gold mb-2">Message ready to send.</p>
+            <p className="font-serif text-2xl text-gold mb-2">Inquiry sent.</p>
             <p className="text-sm text-muted-foreground">
-              Your email client has opened with the details. We will respond shortly.
+              Thank you. Our team has received your message and will respond within 24 hours.
             </p>
           </div>
         ) : (
@@ -143,8 +143,9 @@ export function PartnerDialog() {
             <Field label="Message (optional)" error={errors.message}>
               <Textarea value={form.message} onChange={update("message")} maxLength={1500} rows={4} />
             </Field>
-            <button type="submit" className="btn-gold w-full mt-2">
-              Send Inquiry
+            {submitError && <p className="text-xs text-destructive">{submitError}</p>}
+            <button type="submit" disabled={submitting} className="btn-gold w-full mt-2 disabled:opacity-60 disabled:cursor-not-allowed">
+              {submitting ? "Sending…" : "Send Inquiry"}
             </button>
           </form>
         )}
