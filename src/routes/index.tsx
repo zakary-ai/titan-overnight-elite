@@ -561,7 +561,7 @@ function FinalCTA() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border bg-ink">
+    <footer className="border-t border-gold/15">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12 grid md:grid-cols-3 gap-10 items-start">
         <Logo />
         <div className="text-sm text-muted-foreground leading-relaxed">

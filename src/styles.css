@@ -91,7 +91,7 @@
     font-feature-settings: "ss01", "cv11";
     position: relative;
   }
-  /* Warm radial atmosphere — aged leather/velvet feel */
+  /* Warm radial atmosphere — single fixed wash that carries the entire page */
   body::before {
     content: "";
     position: fixed;
@@ -99,9 +99,9 @@
     z-index: -2;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 75% 55% at 50% 0%, rgba(213,175,76,0.07) 0%, rgba(0,0,0,0) 55%),
-      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(213,175,76,0.05) 0%, rgba(0,0,0,0) 60%),
-      radial-gradient(circle at 50% 45%, #141210 0%, #0c0a08 45%, #050505 100%);
+      radial-gradient(ellipse 65% 45% at 50% 12%, rgba(213,175,76,0.08) 0%, rgba(0,0,0,0) 60%),
+      radial-gradient(ellipse 70% 50% at 50% 88%, rgba(213,175,76,0.06) 0%, rgba(0,0,0,0) 65%),
+      radial-gradient(ellipse 120% 95% at 50% 50%, #181513 0%, #100e0c 35%, #0a0907 65%, #050505 100%);
   }
   /* Warm gold-tinted film grain for tactile depth */
   body::after {
@@ -259,31 +259,10 @@
     animation: shimmer 6s linear infinite;
   }
 
-  /* Section depth — extremely soft tonal lift that fades fully at the edges
-     so adjacent sections never show a visible seam. */
-  .section-depth { position: relative; isolation: isolate; }
-  .section-depth::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(ellipse 90% 60% at 50% 50%,
-      rgba(26,23,20,0.35) 0%,
-      rgba(15,13,11,0.18) 45%,
-      rgba(5,5,5,0) 80%);
-  }
-  .section-depth-soft { position: relative; isolation: isolate; }
-  .section-depth-soft::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(ellipse 90% 70% at 50% 50%,
-      rgba(26,23,20,0.18) 0%,
-      rgba(5,5,5,0) 75%);
-  }
+  /* Section depth — intentionally inert. The body's fixed atmospheric
+     gradient carries the whole page so there are no per-section seams.
+     Class names kept so existing markup doesn't need to change. */
+  .section-depth, .section-depth-soft { position: relative; isolation: isolate; }
 
   /* Gold hairline between sections — soft edges, never harsh */
   .section-divider {
