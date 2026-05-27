@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 
-import founderImg from "@/assets/founder.jpg";
+
 import titanLogo from "@/assets/titan-logo.png";
 import { PartnerDialog, openPartnerDialog } from "@/components/partner-dialog";
 
