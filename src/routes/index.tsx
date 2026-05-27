@@ -120,7 +120,6 @@ function CertMarquee() {
   const items = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"];
   return (
     <section className="section-depth-soft relative bg-transparent">
-      <div className="section-divider" />
       <div
         className="overflow-hidden relative py-5"
         style={{
@@ -140,7 +139,6 @@ function CertMarquee() {
           ))}
         </div>
       </div>
-      <div className="section-divider" />
     </section>
   );
 }
@@ -596,17 +594,11 @@ function Index() {
         <Hero />
         <CertMarquee />
         <StatBand />
-        <div className="section-divider" />
         <WhoWeAre />
-        <div className="section-divider" />
         <Services />
-        <div className="section-divider" />
         <TitanSystem />
-        <div className="section-divider" />
         <PortalShowcase />
-        <div className="section-divider" />
         <Partners />
-        <div className="section-divider" />
         <FinalCTA />
       </main>
       <Footer />
