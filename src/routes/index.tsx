@@ -552,6 +552,55 @@ function FinalCTA() {
   );
 }
 
+const CERTIFICATIONS = [
+  {
+    name: "Avendra Approved",
+    desc: "Vetted and approved supplier within the Avendra procurement network, trusted by leading hospitality brands nationwide.",
+  },
+  {
+    name: "ISSA Member",
+    desc: "Active member of the worldwide cleaning industry association, holding our team to global standards of training and practice.",
+  },
+  {
+    name: "NSF Certified",
+    desc: "Operations aligned to NSF public health and food safety protocols across every back-of-house environment we service.",
+  },
+  {
+    name: "NFPA 96 Certified",
+    desc: "Kitchen exhaust and hood cleaning performed in full compliance with NFPA 96 fire prevention code.",
+  },
+];
+
+function Certifications() {
+  return (
+    <section id="certifications" className="relative py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="reveal max-w-3xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="gold-rule" />
+            <span className="eyebrow">Credentials & Compliance</span>
+            <span className="gold-rule" />
+          </div>
+          <h2 className="font-serif text-4xl md:text-5xl leading-[1.1]">
+            Certified, vetted,<br />
+            <span className="italic text-gold">and accountable.</span>
+          </h2>
+        </div>
+
+        <div className="reveal mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {CERTIFICATIONS.map((c) => (
+            <div key={c.name} className="card-elite rounded-2xl p-7 flex flex-col">
+              <div className="font-serif text-2xl text-gold leading-tight">{c.name}</div>
+              <div className="mt-4 h-px w-10 bg-gold/60" />
+              <p className="mt-5 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="border-t border-gold/15">
@@ -589,6 +638,7 @@ function Index() {
         <PortalShowcase />
         <Leadership />
         <Partners />
+        <Certifications />
 
         <FinalCTA />
       </main>
