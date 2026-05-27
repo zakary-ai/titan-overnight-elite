@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { z } from "zod";
+import { useServerFn } from "@tanstack/react-start";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { sendPartnerInquiry } from "@/lib/contact.functions";
 
 // Tiny module-level store so any component can open the dialog without prop drilling.
 let externalOpen: (() => void) | null = null;
@@ -40,12 +42,16 @@ export function PartnerDialog() {
   const [form, setForm] = useState<FormState>(INITIAL);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const sendInquiry = useServerFn(sendPartnerInquiry);
 
   useEffect(() => {
     externalOpen = () => {
       setSent(false);
       setForm(INITIAL);
       setErrors({});
+      setSubmitError(null);
       setOpen(true);
     };
     return () => { externalOpen = null; };
@@ -54,7 +60,7 @@ export function PartnerDialog() {
   const update = (k: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
@@ -66,19 +72,25 @@ export function PartnerDialog() {
       setErrors(errs);
       return;
     }
-    const subject = `Partnership Inquiry, ${parsed.data.property}`;
-    const body = [
-      `Name: ${parsed.data.name}`,
-      `Property: ${parsed.data.property}`,
-      `Email: ${parsed.data.email}`,
-      `Phone: ${parsed.data.phone}`,
-      "",
-      parsed.data.message || "",
-    ].join("\n");
-    window.location.href = `mailto:office@titansolutionsco.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      await sendInquiry({
+        data: {
+          name: parsed.data.name,
+          property: parsed.data.property,
+          email: parsed.data.email,
+          phone: parsed.data.phone,
+          message: parsed.data.message || "",
+        },
+      });
+      setSent(true);
+    } catch (err) {
+      console.error(err);
+      setSubmitError("Something went wrong sending your inquiry. Please try again or email office@titansolutionsco.com directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -107,9 +119,9 @@ export function PartnerDialog() {
             <div className="mx-auto w-12 h-12 border border-gold rotate-45 grid place-items-center mb-4">
               <span className="-rotate-45 text-gold font-serif text-lg">✓</span>
             </div>
-            <p className="font-serif text-2xl text-gold mb-2">Message ready to send.</p>
+            <p className="font-serif text-2xl text-gold mb-2">Inquiry sent.</p>
             <p className="text-sm text-muted-foreground">
-              Your email client has opened with the details. We will respond shortly.
+              Thank you. Our team has received your message and will respond within 24 hours.
             </p>
           </div>
         ) : (
@@ -131,8 +143,9 @@ export function PartnerDialog() {
             <Field label="Message (optional)" error={errors.message}>
               <Textarea value={form.message} onChange={update("message")} maxLength={1500} rows={4} />
             </Field>
-            <button type="submit" className="btn-gold w-full mt-2">
-              Send Inquiry
+            {submitError && <p className="text-xs text-destructive">{submitError}</p>}
+            <button type="submit" disabled={submitting} className="btn-gold w-full mt-2 disabled:opacity-60 disabled:cursor-not-allowed">
+              {submitting ? "Sending…" : "Send Inquiry"}
             </button>
           </form>
         )}
