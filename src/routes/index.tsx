@@ -65,7 +65,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="home" className="relative w-full overflow-hidden border-b border-gold/60 min-h-[88vh] md:min-h-[720px]">
+    <section id="home" className="relative w-full overflow-hidden border-b border-gold/60 min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-230px)]">
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
