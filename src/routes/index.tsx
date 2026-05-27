@@ -87,10 +87,11 @@ function Hero() {
         </div>
 
         <h1 className="font-black tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] max-w-5xl mx-auto uppercase">
-          Wake Up With<br className="sm:hidden" />{" "}
-          <span className="text-gold">More Cash</span><br />
-          In The Register.
+          Wake Up To A<br className="sm:hidden" />{" "}
+          <span className="text-gold">Flawless Hotel.</span><br />
+          Every Single Morning.
         </h1>
+
 
         <p className="mt-6 md:mt-8 max-w-2xl mx-auto text-base md:text-xl font-light text-muted-foreground leading-relaxed">
           For NYC luxury hotel owners who refuse to gamble their mornings on chance —
