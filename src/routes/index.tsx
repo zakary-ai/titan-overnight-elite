@@ -589,8 +589,7 @@ function Index() {
       <Nav />
       <main>
         <Hero />
-        <CertMarquee />
-        <StatBand />
+        <CredentialBand />
         <WhoWeAre />
         <Services />
         <TitanSystem />
