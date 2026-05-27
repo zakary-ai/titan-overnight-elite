@@ -638,6 +638,7 @@ function Index() {
         <PortalShowcase />
         <Leadership />
         <Partners />
+        <Certifications />
 
         <FinalCTA />
       </main>
