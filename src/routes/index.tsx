@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import heroPoster from "@/assets/hero-poster.jpg";
+
 import founderImg from "@/assets/founder.jpg";
 import titanLogo from "@/assets/titan-logo.png";
 import { PartnerDialog, openPartnerDialog } from "@/components/partner-dialog";
@@ -67,12 +67,12 @@ function Hero() {
   return (
     <section id="home" className="relative w-full overflow-hidden border-b border-gold/60 min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-230px)]">
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover bg-black"
         autoPlay
         muted
         loop
         playsInline
-        poster={heroPoster}
+        preload="auto"
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
