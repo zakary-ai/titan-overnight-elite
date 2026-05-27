@@ -183,7 +183,7 @@ const WHO_CARDS = [
 
 function WhoWeAre() {
   return (
-    <section id="who" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="who" className="section-depth relative py-24 lg:py-32 overflow-hidden">
       <div className="grid-overlay -z-10" />
       <div className="glow-orb -z-10 w-[520px] h-[520px] -right-32 top-10 opacity-70" />
       <div className="glow-orb-soft -z-10 w-[600px] h-[600px] -left-40 bottom-0" />
