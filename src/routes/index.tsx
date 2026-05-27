@@ -521,26 +521,27 @@ function Partners() {
 function FinalCTA() {
   return (
     <section id="contact" className="section-depth relative py-24 lg:py-32 overflow-hidden bg-transparent">
-      <div className="glow-orb -z-10 w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 8s ease-in-out infinite" }} />
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
-      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 text-center">
-        <div className="reveal flex items-center justify-center gap-4 mb-8">
-          <span className="gold-rule" />
-          <span className="eyebrow">Begin The Partnership</span>
-          <span className="gold-rule" />
-        </div>
-        <h2 className="reveal font-serif text-5xl md:text-7xl leading-[1.03]">
-          Ready to stop thinking<br />
-          <span className="italic text-gold">about overnight?</span>
-        </h2>
-        <p className="reveal mt-8 max-w-2xl mx-auto text-muted-foreground text-lg leading-relaxed">
-          We work exclusively with luxury hotel properties in the New York metropolitan area. If you are ready to
-          discuss a partnership, reach out directly to Frank.
-        </p>
+      <div className="relative max-w-[1100px] mx-auto px-6 lg:px-12">
+        <div className="reveal relative rounded-3xl border border-gold/20 bg-gradient-to-b from-white/[0.04] to-white/[0.01] backdrop-blur-sm px-8 py-16 md:px-16 md:py-20 text-center shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
+          <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gold/5 blur-3xl -z-10" />
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="gold-rule" />
+            <span className="eyebrow">Begin The Partnership</span>
+            <span className="gold-rule" />
+          </div>
+          <h2 className="font-serif text-5xl md:text-7xl leading-[1.03]">
+            Ready to stop thinking<br />
+            <span className="italic text-gold">about overnight?</span>
+          </h2>
+          <p className="mt-8 max-w-2xl mx-auto text-muted-foreground text-lg leading-relaxed">
+            We work exclusively with luxury hotel properties in the New York metropolitan area. If you are ready to
+            discuss a partnership, reach out directly to Frank.
+          </p>
 
-        <div className="reveal mt-12 flex flex-wrap justify-center gap-4">
-          <button onClick={openPartnerDialog} className="btn-gold">Become a Partner →</button>
-          <a href="tel:3474088559" className="btn-ghost-gold">Call Us</a>
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <button onClick={openPartnerDialog} className="btn-gold">Become a Partner →</button>
+            <a href="tel:3474088559" className="btn-ghost-gold">Call Us</a>
+          </div>
         </div>
       </div>
     </section>
