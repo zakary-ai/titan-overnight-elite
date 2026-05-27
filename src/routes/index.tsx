@@ -244,7 +244,7 @@ const SERVICES = [
 
 function Services() {
   return (
-    <section id="services" className="relative py-24 lg:py-32 bg-ink/40 border-y border-border overflow-hidden">
+    <section id="services" className="section-depth relative py-24 lg:py-32 bg-transparent overflow-hidden">
       <div className="glow-orb-soft -z-10 w-[700px] h-[700px] -left-60 top-1/3" />
       <div className="glow-orb-soft -z-10 w-[500px] h-[500px] -right-40 bottom-0" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
