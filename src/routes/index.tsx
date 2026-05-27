@@ -534,7 +534,7 @@ function Partners() {
 
 function FinalCTA() {
   return (
-    <section id="contact" className="section-depth relative py-24 lg:py-32 border-t border-border overflow-hidden bg-transparent">
+    <section id="contact" className="section-depth relative py-24 lg:py-32 overflow-hidden bg-transparent">
       <div className="glow-orb -z-10 w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animation: "goldPulse 8s ease-in-out infinite" }} />
       <div className="grid-overlay -z-10" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gold/5 blur-3xl pointer-events-none" />
