@@ -258,4 +258,48 @@
     color: transparent;
     animation: shimmer 6s linear infinite;
   }
+
+  /* Section depth — gentle top-to-bottom fade overlay for layered scroll feel */
+  .section-depth { position: relative; isolation: isolate; }
+  .section-depth::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(26,23,20,0.65) 0%,
+      rgba(15,13,11,0.35) 35%,
+      rgba(5,5,5,0.0) 70%,
+      rgba(5,5,5,0.6) 100%);
+  }
+  .section-depth-soft { position: relative; isolation: isolate; }
+  .section-depth-soft::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(26,23,20,0.35) 0%,
+      rgba(5,5,5,0.0) 60%,
+      rgba(5,5,5,0.3) 100%);
+  }
+
+  /* Gold hairline between sections — soft edges, never harsh */
+  .section-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(213,175,76,0.22) 20%,
+      rgba(213,175,76,0.22) 80%,
+      transparent 100%);
+  }
+
+  /* Gold "catching light" — subtle glow for accent text */
+  .gold-lit {
+    color: var(--gold);
+    text-shadow: 0 0 24px rgba(213,175,76,0.18), 0 0 2px rgba(213,175,76,0.12);
+  }
 }
