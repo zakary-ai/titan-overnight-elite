@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { z } from "zod";
+import { useServerFn } from "@tanstack/react-start";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { sendPartnerInquiry } from "@/lib/contact.functions";
 
 // Tiny module-level store so any component can open the dialog without prop drilling.
 let externalOpen: (() => void) | null = null;
