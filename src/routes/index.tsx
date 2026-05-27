@@ -119,7 +119,8 @@ function Hero() {
 function CertMarquee() {
   const items = ["NSF Certified", "Avendra Approved", "Marriott Partner", "CRM Live Reporting", "Owner Operated", "365 Nights/Year", "NYC Based"];
   return (
-    <section className="relative bg-transparent border-t border-b-0 border-gold/60">
+    <section className="section-depth-soft relative bg-transparent">
+      <div className="section-divider" />
       <div
         className="overflow-hidden relative py-5"
         style={{
